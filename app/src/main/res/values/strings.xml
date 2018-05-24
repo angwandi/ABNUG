@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">InventoryApp1</string>
+    <string name="product_name">Product Name</string>
+    <string name="book_title">Book title Book title Book title</string>
+    <string name="price">Price</string>
+    <string name="enter_price">Enter Price</string>
+    <string name="quantity">Quantity</string>
+    <string name="_2354">2354</string>
+    <string name="supply_name_textView">Supply name</string>
+    <string name="supply_name_editText">Supply name</string>
+    <string name="supply_phone_textView">Supply phone</string>
+    <string name="supply_phone_editText">Supply phone</string>
 </resources>
