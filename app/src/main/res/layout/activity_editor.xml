@@ -14,10 +14,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/product_name"
-        android:textSize="24sp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toTopOf="@+id/product_name_edit_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <EditText
         android:id="@+id/product_name_edit_text"
@@ -25,16 +26,16 @@
         android:layout_height="wrap_content"
         android:hint="@string/book_title"
         android:inputType="text"
-        android:textSize="12sp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         app:layout_constraintStart_toStartOf="@+id/product_name_text_view"
         app:layout_constraintTop_toBottomOf="@+id/product_name_text_view" />
 
     <TextView
         android:id="@+id/price_text_view"
         android:layout_width="0dp"
-        android:layout_height="32dp"
+        android:layout_height="wrap_content"
         android:text="@string/price"
-        android:textSize="24sp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="@+id/product_name_edit_text"
         app:layout_constraintTop_toBottomOf="@+id/product_name_edit_text" />
 
@@ -44,7 +45,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/enter_price"
         android:inputType="number"
-        android:textSize="12sp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         app:layout_constraintStart_toStartOf="@+id/price_text_view"
         app:layout_constraintTop_toBottomOf="@+id/price_text_view" />
 
@@ -53,7 +54,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/quantity"
-        android:textSize="24sp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="@+id/price_edit_text"
         app:layout_constraintTop_toBottomOf="@+id/price_edit_text" />
 
@@ -63,7 +64,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/_2354"
         android:inputType="number"
-        android:textSize="12sp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         app:layout_constraintStart_toStartOf="@+id/quantity_text_view"
         app:layout_constraintTop_toBottomOf="@+id/quantity_text_view" />
 
@@ -72,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/supply_name_textView"
-        android:textSize="24sp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="@+id/quantity_edit_text"
         app:layout_constraintTop_toBottomOf="@+id/quantity_edit_text" />
 
@@ -82,7 +83,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/supply_name_editText"
         android:inputType="text"
-        android:textSize="12sp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         app:layout_constraintStart_toStartOf="@+id/supply_name_text_view"
         app:layout_constraintTop_toBottomOf="@+id/supply_name_text_view" />
 
@@ -91,7 +92,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/supply_phone_textView"
-        android:textSize="24sp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="@+id/supply_name_edit_text"
         app:layout_constraintTop_toBottomOf="@+id/supply_name_edit_text" />
 
@@ -101,18 +102,19 @@
         android:layout_height="wrap_content"
         android:hint="@string/supply_phone_editText"
         android:inputType="phone"
-        android:textSize="12sp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         app:layout_constraintStart_toStartOf="@+id/supply_phone_text_view"
         app:layout_constraintTop_toBottomOf="@+id/supply_phone_text_view" />
 
     <TextView
         android:id="@+id/price_currency_text_view"
-        android:layout_width="0dp"
+        android:layout_width="8dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:text="@string/currency"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="@+id/price_edit_text"
         app:layout_constraintStart_toEndOf="@+id/price_edit_text" />
 </android.support.constraint.ConstraintLayout>

@@ -11,4 +11,8 @@
     <string name="supply_phone_textView">Supply phone</string>
     <string name="supply_phone_editText">+243 7880640470</string>
     <string name="currency">£</string>
+    <string name="insert_dummy_data">Insert Dummy Data</string>
+    <string name="inventory_menu_delete">Delete</string>
+    <string name="editor_menu_save">Save</string>
+    <string name="editor_menu_delete">Delete</string>
 </resources>

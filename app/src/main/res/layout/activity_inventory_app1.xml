@@ -31,6 +31,7 @@
         android:layout_marginRight="16dp"
         android:clickable="true"
         android:focusable="true"
+        app:rippleColor="@color/colorPrimaryLight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_fab_image_24dp" />
