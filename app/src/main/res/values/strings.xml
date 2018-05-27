@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">InventoryApp1</string>
-    <string name="product_name">Product Name</string>
-    <string name="book_title">Book title Book title Book title</string>
+    <string name="book">Book</string>
+    <string name="book_title">Title</string>
     <string name="price">Price</string>
-    <string name="enter_price">Enter Price</string>
+    <string name="enter_price">Price</string>
     <string name="quantity">Quantity</string>
-    <string name="_2354">2354</string>
-    <string name="supply_name_textView">Supply name</string>
-    <string name="supply_name_editText">2ms Dema</string>
-    <string name="supply_phone_textView">Supply phone</string>
-    <string name="supply_phone_editText">+243 7880640470</string>
+    <string name="enter_quantity">Quantity</string>
+    <string name="supply_textView">Supply</string>
+    <string name="supply_name_editText">Name</string>
+    <string name="supply_phone_textView">Phone</string>
+    <string name="supply_phone_editText">Phone</string>
     <string name="currency">£</string>
     <string name="insert_dummy_data">Insert Dummy Data</string>
     <string name="inventory_menu_delete">Delete</string>

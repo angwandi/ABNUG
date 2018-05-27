@@ -8,4 +8,7 @@
     <color name="colorSecondaryDark">#c8b7b5</color>
     <color name="colorSecondary">#fbe9e7</color>
     <color name="colorPrimaryText">#000000</color>
+    <!--Editor colors for theme-->
+    <color name="editorColorPrimary">#37464f</color>
+    <color name="editorColorPrimaryDark">#101f27</color>
 </resources>

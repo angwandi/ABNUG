@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InventoryApp1">
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -31,7 +31,7 @@
         android:layout_marginRight="16dp"
         android:clickable="true"
         android:focusable="true"
-        app:rippleColor="@color/colorPrimaryLight"
+        app:rippleColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_fab_image_24dp" />

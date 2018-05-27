@@ -6,8 +6,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
-    <style name="BlackText" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/colorPrimaryText</item>
+    <style name="EditorTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/editorColorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/editorColorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 </resources>
