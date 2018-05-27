@@ -1,4 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!--Book textView dimensions-->
+    <dimen name="book_textView_marginTop">32dp</dimen>
+    <!--Book Title editText dimensions-->
+    <dimen name="title_editText_marginEnd">16dp</dimen>
+    <dimen name="title_editText_marginRight">16dp</dimen>
+    <dimen name="title_editText_marginLeft">8dp</dimen>
+    <!--Book Price editText dimensions-->
+    <dimen name="price_editText_marginTop">8dp</dimen>
+    <dimen name="price_editText_marginEnd">16dp</dimen>
+    <dimen name="price_editText_marginLeft">8dp</dimen>
+    <dimen name="price_editText_marginRight">16dp</dimen>
+    <dimen name="price_editText_marginStart">8dp</dimen>
+    <!--Book Quantity editText dimensions-->
+    <dimen name="quantity_editText_marginStart">8dp</dimen>
+    <dimen name="quantity_editText_marginLeft">8dp</dimen>
+    <dimen name="quantity_editText_marginRight">16dp</dimen>
+    <dimen name="quantity_editText_marginTop">8dp</dimen>
+    <dimen name="quantity_editText_marginEnd">16dp</dimen>
+    <!--Book supply name editText dimensions-->
+    <dimen name="supply_name_editText_marginEnd">16dp</dimen>
+    <dimen name="supply_name_editText_marginRight">16dp</dimen>
+    <dimen name="supply_name_editText_marginLeft">8dp</dimen>
+    <dimen name="supply_name_editText_marginTop">8dp</dimen>
+    <dimen name="supply_name_editText_marginStart">8dp</dimen>
+    <!--Book supply phone editText dimensions-->
+    <dimen name="supply_phone_editText_marginEnd">16dp</dimen>
+    <dimen name="supply_phone_editText_marginRight">16dp</dimen>
+    <dimen name="supply_phone_editText_marginTop">8dp</dimen>
+    <!--Book price currency textView dimensions-->
+    <dimen name="price_currency_textView_marginBottom">8dp</dimen>
+    <dimen name="price_currency_textView_marginEnd">24dp</dimen>
+    <dimen name="price_currency_textView_marginRight">24dp</dimen>
+    <dimen name="price_currency_textView_marginTop">8dp</dimen>
+    <!--Empty View textView dimensions-->
+    <dimen name="textView_textView_marginBottom">8dp</dimen>
+    <dimen name="textView_textView_marginEnd">8dp</dimen>
+    <dimen name="textView_textView_marginLeft">8dp</dimen>
+    <dimen name="textView_textView_marginRight">8dp</dimen>
+    <dimen name="textView_textView_marginStart">8dp</dimen>
+    <dimen name="textView_textView_marginTop">8dp</dimen>
+    <!--FAB dimensions-->
+    <dimen name="fab_marginBottom">16dp</dimen>
+    <dimen name="fab_marginEnd">16dp</dimen>
+    <dimen name="fab_marginRight">16dp</dimen>
 </resources>

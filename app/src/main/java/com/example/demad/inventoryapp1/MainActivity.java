@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.demad.inventoryapp1.Data.BookContract;
 import com.example.demad.inventoryapp1.Data.BookDbHelper;
 
 import static com.example.demad.inventoryapp1.Data.BookContract.BookEntry.*;
@@ -61,16 +62,16 @@ public class MainActivity extends AppCompatActivity {
         // Create and/or open a database to read from it
         SQLiteDatabase db = bookDbHelper.getReadableDatabase();
         String[] projection = {
-                _ID,
-                C_BOOK_TITLE,
-                C_BOOK_PRICE,
-                C_BOOK_QUANTITY,
-                C_BOOK_SUPPLY_NAME,
-                C_BOOK_SUPPLY_PHONE,
+                BookContract.BookEntry._ID,
+                BookContract.BookEntry.COLUMN_BOOK_TITLE,
+                BookContract.BookEntry.COLUMN_BOOK_PRICE,
+                BookContract.BookEntry.COLUMN_BOOK_QUANTITY,
+                BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME,
+                BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE,
         };
         TextView displayView = findViewById(R.id.textView);
         try (Cursor cursor = db.query(
-                TABLE_NAME,
+                BookContract.BookEntry.TABLE_NAME,
                 projection,
                 null,
                 null,
@@ -84,20 +85,20 @@ public class MainActivity extends AppCompatActivity {
             //
             // In the while loop below, iterate through the rows of the cursor and display
             // the information from each column in this order.
-            displayView.setText(getString(R.string.displayView_text) + cursor.getCount() + getString(R.string.displayView_text2));
+            displayView.setText("The books table contains " + cursor.getCount() + " books.\n\n");
             displayView.append(_ID + " - " +
-                    C_BOOK_TITLE + " - " +
-                    C_BOOK_PRICE + " - " +
-                    C_BOOK_QUANTITY + " - " +
-                    C_BOOK_SUPPLY_NAME + " - " +
-                    C_BOOK_SUPPLY_PHONE + "\n ");
+                    BookContract.BookEntry.COLUMN_BOOK_TITLE + " - " +
+                    BookContract.BookEntry.COLUMN_BOOK_PRICE + " - " +
+                    BookContract.BookEntry.COLUMN_BOOK_QUANTITY + " - " +
+                    BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME + " - " +
+                    BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE + "\n ");
             // Figure out the index of each column
             int idColIndex = cursor.getColumnIndex(_ID);
-            int bTitleColIndex = cursor.getColumnIndex(C_BOOK_TITLE);
-            int bPriceColIndex = cursor.getColumnIndex(C_BOOK_PRICE);
-            int bQuantityColIndex = cursor.getColumnIndex(C_BOOK_QUANTITY);
-            int bSupplyNameColIndex = cursor.getColumnIndex(C_BOOK_SUPPLY_NAME);
-            int bSupplyPhoneColIndex = cursor.getColumnIndex(C_BOOK_SUPPLY_PHONE);
+            int bTitleColIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_TITLE);
+            int bPriceColIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_PRICE);
+            int bQuantityColIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_QUANTITY);
+            int bSupplyNameColIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME);
+            int bSupplyPhoneColIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE);
             // Iterate through all the returned rows in the cursor
             while (cursor.moveToNext()) {
                 // Use that index to extract the String or Int value of the word
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 int currentBookPrice = cursor.getInt(bPriceColIndex);
                 int currentBookQuantity = cursor.getInt(bQuantityColIndex);
                 String currentBookSupplyName = cursor.getString(bSupplyNameColIndex);
-                int currentBookSupplyPhone = cursor.getInt(bSupplyPhoneColIndex);
+                String currentBookSupplyPhone = cursor.getString(bSupplyPhoneColIndex);
                 // Display the values from each column of the current row in the cursor in the TextView
                 displayView.append(("\n" + currentID + " - " +
                         currentBookTitle + " - " +
@@ -116,9 +117,10 @@ public class MainActivity extends AppCompatActivity {
                         currentBookSupplyName + " - " +
                         currentBookSupplyPhone));
             }
+            // Always close the cursor when you're done reading from it. This releases all its
+            // resources and makes it invalid.
+            cursor.close();
         }
-        // Always close the cursor when you're done reading from it. This releases all its
-        // resources and makes it invalid.
     }
 
     /**
@@ -130,11 +132,11 @@ public class MainActivity extends AppCompatActivity {
         // Create a ContentValues object where column names are the keys,
         // and The book of life's book attributes are the values.
         ContentValues contentValues = new ContentValues();
-        contentValues.put(C_BOOK_TITLE, "The book of life");
-        contentValues.put(C_BOOK_PRICE, "30");
-        contentValues.put(C_BOOK_QUANTITY, "9");
-        contentValues.put(C_BOOK_SUPPLY_NAME, "2msDema");
-        contentValues.put(C_BOOK_SUPPLY_PHONE, "+447880640470");
+        contentValues.put(COLUMN_BOOK_TITLE, "The Book life");
+        contentValues.put(COLUMN_BOOK_PRICE, "29");
+        contentValues.put(COLUMN_BOOK_QUANTITY, "5");
+        contentValues.put(COLUMN_BOOK_SUPPLY_NAME, "Google Books");
+        contentValues.put(COLUMN_BOOK_SUPPLY_PHONE, "(+44)7880640470");
         // Insert a new row for The book of life in the database, returning the ID of that new row.
         // The first argument for db.insert() is the books table name.
         // The second argument provides the name of a column in which the framework

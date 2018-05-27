@@ -6,6 +6,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import static com.example.demad.inventoryapp1.Data.BookContract.BookEntry.*;
 
+/**
+ * Displays list of books that were entered and stored in the app.
+ */
 public class BookDbHelper extends SQLiteOpenHelper {
     /**
      * Name of the database file
@@ -32,13 +35,13 @@ public class BookDbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // Create a String that contains the SQL statement to create the books table
         String SQL_CREATE_BOOKS_TABLE = "CREATE TABLE " + TABLE_NAME + "("
-                + _ID + "INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + C_BOOK_TITLE + "TEXT NOT NULL,"
-                + C_BOOK_PRICE + "INTEGER NOT NULL,"
-                + C_BOOK_QUANTITY + "INTEGER NOT NULL DEFAULT 0,"
-                + C_BOOK_SUPPLY_NAME + "TEXT NOT NULL,"
-                + C_BOOK_SUPPLY_PHONE + "INTEGER NOT NULL);";
-        //        Execute the SQL statement
+                + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + COLUMN_BOOK_TITLE + " TEXT NOT NULL,"
+                + COLUMN_BOOK_PRICE + " INTEGER NOT NULL,"
+                + COLUMN_BOOK_QUANTITY + " INTEGER NOT NULL,"
+                + COLUMN_BOOK_SUPPLY_NAME + " TEXT NOT NULL,"
+                + COLUMN_BOOK_SUPPLY_PHONE + " INTEGER NOT NULL);";
+        //Execute the SQL statement
         db.execSQL(SQL_CREATE_BOOKS_TABLE);
     }
 

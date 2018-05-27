@@ -8,44 +8,24 @@
 
     <TextView
         android:id="@+id/book_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        style="@style/book_textView_style"
         android:text="@string/book"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/barrier2"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/title_edit_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="8dp"
-        android:ellipsize="end"
+        style="@style/title_editText_style"
         android:hint="@string/book_title"
-        android:inputType="textCapWords"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         app:layout_constraintBaseline_toBaselineOf="@+id/book_text_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/book_text_view" />
 
     <EditText
         android:id="@+id/price_edit_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        style="@style/price_editText_style"
         android:hint="@string/enter_price"
-        android:inputType="number"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/barrier2"
@@ -53,27 +33,16 @@
 
     <EditText
         android:id="@+id/quantity_edit_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        style="@style/quantity_editText_style"
         android:hint="@string/enter_quantity"
-        android:inputType="number"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/barrier2"
         app:layout_constraintTop_toBottomOf="@+id/price_edit_text" />
 
     <TextView
         android:id="@+id/supply_name_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/supply_name_textView_style"
         android:text="@string/supply_textView"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:textColor="@color/colorPrimary"
         app:layout_constraintBaseline_toBaselineOf="@+id/supply_name_edit_text"
         app:layout_constraintEnd_toEndOf="@+id/barrier2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -81,31 +50,16 @@
 
     <EditText
         android:id="@+id/supply_name_edit_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ellipsize="end"
+        style="@style/supply_name_editText_style"
         android:hint="@string/supply_name_editText"
-        android:inputType="textCapWords"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/supply_name_text_view"
         app:layout_constraintTop_toBottomOf="@+id/quantity_edit_text" />
 
     <EditText
         android:id="@+id/supply_phone_edit_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp"
+        style="@style/supply_phone_editText_style"
         android:hint="@string/supply_phone_editText"
-        android:inputType="phone"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/supply_name_edit_text"
@@ -113,17 +67,10 @@
 
     <TextView
         android:id="@+id/price_currency_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+        style="@style/price_currency_textView_style"
         android:text="@string/currency"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="@+id/price_edit_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/price_edit_text"
         app:layout_constraintTop_toTopOf="@+id/price_edit_text" />
 
     <android.support.constraint.Guideline
@@ -145,9 +92,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="0"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <android.support.constraint.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 </android.support.constraint.ConstraintLayout>

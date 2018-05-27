@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
@@ -6,9 +6,135 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <!--Editor theme for Editor Activity-->
     <style name="EditorTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/editorColorPrimaryDark</item>
         <item name="colorPrimaryDark">@color/editorColorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <!--Book textView style-->
+    <style name="book_textView_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/book_textView_marginTop</item>
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Medium</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+    <!--Book title editText style-->
+    <style name="title_editText_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">16dp</item>
+        <item name="android:layout_marginLeft">@dimen/title_editText_marginLeft</item>
+        <item name="android:layout_marginRight">@dimen/title_editText_marginRight</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">8dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Small</item>
+    </style>
+    <!--Book price editText style-->
+    <style name="price_editText_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/price_editText_marginEnd
+        </item>
+        <item name="android:layout_marginLeft">@dimen/price_editText_marginLeft</item>
+        <item name="android:layout_marginRight">@dimen/price_editText_marginRight</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">
+            @dimen/price_editText_marginStart
+        </item>
+        <item name="android:layout_marginTop">@dimen/price_editText_marginTop</item>
+        <item name="android:inputType">number</item>
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Small</item>
+    </style>
+    <!--Book quantity editText style-->
+    <style name="quantity_editText_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/quantity_editText_marginEnd
+        </item>
+        <item name="android:layout_marginLeft">@dimen/quantity_editText_marginLeft</item>
+        <item name="android:layout_marginRight">@dimen/quantity_editText_marginRight</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">
+            @dimen/quantity_editText_marginStart
+        </item>
+        <item name="android:layout_marginTop">@dimen/quantity_editText_marginTop</item>
+        <item name="android:inputType">number</item>
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Small</item>
+    </style>
+    <!--Book supply name textView style-->
+    <style name="supply_name_textView_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Medium</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+    <!--Book supply phone editText style-->
+    <style name="supply_name_editText_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/supply_name_editText_marginEnd
+        </item>
+        <item name="android:layout_marginLeft">@dimen/supply_name_editText_marginLeft</item>
+        <item name="android:layout_marginRight">@dimen/supply_name_editText_marginRight</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">
+            @dimen/supply_name_editText_marginStart
+        </item>
+        <item name="android:layout_marginTop">@dimen/supply_name_editText_marginTop</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Small</item>
+    </style>
+    <!--Book supply phone editText style-->
+    <style name="supply_phone_editText_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/supply_phone_editText_marginEnd
+        </item>
+        <item name="android:layout_marginRight">@dimen/supply_phone_editText_marginRight</item>
+        <item name="android:layout_marginTop">@dimen/supply_phone_editText_marginTop</item>
+        <item name="android:inputType">phone</item>
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Small</item>
+    </style>
+    <!--Book price currency TextView style-->
+    <style name="price_currency_textView_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/price_currency_textView_marginBottom</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/price_currency_textView_marginEnd
+        </item>
+        <item name="android:layout_marginRight">@dimen/price_currency_textView_marginRight</item>
+        <item name="android:layout_marginTop">@dimen/price_currency_textView_marginTop</item>
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Medium</item>
+    </style>
+    <!--Empty View textView style-->
+    <style name="textView_textView_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_marginBottom">@dimen/textView_textView_marginBottom</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/textView_textView_marginEnd
+        </item>
+        <item name="android:layout_marginLeft">@dimen/textView_textView_marginLeft</item>
+        <item name="android:layout_marginRight">@dimen/textView_textView_marginRight</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">8dp</item>
+        <item name="android:layout_marginTop">@dimen/textView_textView_marginTop</item>
+    </style>
+    <!--FAB style-->
+    <style name="fab_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/fab_marginBottom</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/fab_marginEnd
+        </item>
+        <item name="android:layout_marginRight">@dimen/fab_marginRight</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
     </style>
 </resources>
