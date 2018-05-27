@@ -1,14 +1,31 @@
 package com.example.demad.inventoryapp1;
 
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
+import com.example.demad.inventoryapp1.Data.BookDbHelper;
+
+import static com.example.demad.inventoryapp1.Data.BookContract.BookEntry.*;
 
 public class MainActivity extends AppCompatActivity {
+    /**
+     * Database helper that will provide us access to the database
+     */
+    private BookDbHelper bookDbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +39,111 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        // To access our database, we instantiate our subclass of SQLiteOpenHelper
+        // and pass the context, which is the current activity.
+        bookDbHelper = new BookDbHelper(this);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    protected void onStart() {
+        super.onStart();
+        displayDatabaseInfo();
+    }
+
+    /**
+     * Temporary helper method to display information in the onscreen TextView about the state of
+     * the books database.
+     */
+    @SuppressLint("SetTextI18n")
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private void displayDatabaseInfo() {
+        // Create and/or open a database to read from it
+        SQLiteDatabase db = bookDbHelper.getReadableDatabase();
+        String[] projection = {
+                _ID,
+                C_BOOK_TITLE,
+                C_BOOK_PRICE,
+                C_BOOK_QUANTITY,
+                C_BOOK_SUPPLY_NAME,
+                C_BOOK_SUPPLY_PHONE,
+        };
+        TextView displayView = findViewById(R.id.textView);
+        try (Cursor cursor = db.query(
+                TABLE_NAME,
+                projection,
+                null,
+                null,
+                null,
+                null,
+                null)) {
+            // Create a header in the Text View that looks like this:
+            //
+            // The books table contains <number of rows in Cursor> books.
+            // _id - title - price - quantity - supply name - supply phone
+            //
+            // In the while loop below, iterate through the rows of the cursor and display
+            // the information from each column in this order.
+            displayView.setText(getString(R.string.displayView_text) + cursor.getCount() + getString(R.string.displayView_text2));
+            displayView.append(_ID + " - " +
+                    C_BOOK_TITLE + " - " +
+                    C_BOOK_PRICE + " - " +
+                    C_BOOK_QUANTITY + " - " +
+                    C_BOOK_SUPPLY_NAME + " - " +
+                    C_BOOK_SUPPLY_PHONE + "\n ");
+            // Figure out the index of each column
+            int idColIndex = cursor.getColumnIndex(_ID);
+            int bTitleColIndex = cursor.getColumnIndex(C_BOOK_TITLE);
+            int bPriceColIndex = cursor.getColumnIndex(C_BOOK_PRICE);
+            int bQuantityColIndex = cursor.getColumnIndex(C_BOOK_QUANTITY);
+            int bSupplyNameColIndex = cursor.getColumnIndex(C_BOOK_SUPPLY_NAME);
+            int bSupplyPhoneColIndex = cursor.getColumnIndex(C_BOOK_SUPPLY_PHONE);
+            // Iterate through all the returned rows in the cursor
+            while (cursor.moveToNext()) {
+                // Use that index to extract the String or Int value of the word
+                // at the current row the cursor is on.
+                int currentID = cursor.getInt(idColIndex);
+                String currentBookTitle = cursor.getString(bTitleColIndex);
+                int currentBookPrice = cursor.getInt(bPriceColIndex);
+                int currentBookQuantity = cursor.getInt(bQuantityColIndex);
+                String currentBookSupplyName = cursor.getString(bSupplyNameColIndex);
+                int currentBookSupplyPhone = cursor.getInt(bSupplyPhoneColIndex);
+                // Display the values from each column of the current row in the cursor in the TextView
+                displayView.append(("\n" + currentID + " - " +
+                        currentBookTitle + " - " +
+                        currentBookPrice + " - " +
+                        currentBookQuantity + " - " +
+                        currentBookSupplyName + " - " +
+                        currentBookSupplyPhone));
+            }
+        }
+        // Always close the cursor when you're done reading from it. This releases all its
+        // resources and makes it invalid.
+    }
+
+    /**
+     * Helper method to insert hardcoded pet data into the database. For debugging purposes only.
+     */
+    private void insertBook() {
+        // Gets the database in write mode
+        SQLiteDatabase db = bookDbHelper.getReadableDatabase();
+        // Create a ContentValues object where column names are the keys,
+        // and The book of life's book attributes are the values.
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(C_BOOK_TITLE, "The book of life");
+        contentValues.put(C_BOOK_PRICE, "30");
+        contentValues.put(C_BOOK_QUANTITY, "9");
+        contentValues.put(C_BOOK_SUPPLY_NAME, "2msDema");
+        contentValues.put(C_BOOK_SUPPLY_PHONE, "+447880640470");
+        // Insert a new row for The book of life in the database, returning the ID of that new row.
+        // The first argument for db.insert() is the books table name.
+        // The second argument provides the name of a column in which the framework
+        // can insert NULL in the event that the ContentValues is empty (if
+        // this is set to "null", then the framework will not insert a row when
+        // there are no values).
+        // The third argument is the ContentValues object containing the info for the book of life.
+        long newRowID = db.insert(TABLE_NAME, null, contentValues);
+        Log.v("MainActivity", "New Row ID" + newRowID);
     }
 
     /**
@@ -37,13 +159,16 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Add action click on the main menu items
      */
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // User clicked on a menu option in the app bar overflow menu
         switch (item.getItemId()) {
             // Respond to a click on the "Insert dummy data" menu option
             case R.id.action_insert_dummy_data:
-                //Do nothing for now
+                //Add dummy data
+                insertBook();
+                displayDatabaseInfo();
                 return true;
             // Respond to a click on the "Delete all entries" menu option
             case R.id.action_delete_all_entries:

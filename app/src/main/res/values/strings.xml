@@ -15,4 +15,6 @@
     <string name="inventory_menu_delete">Delete</string>
     <string name="editor_menu_save">Save</string>
     <string name="editor_menu_delete">Delete</string>
+    <string name="displayView_text">The books table contains</string>
+    <string name="displayView_text2">books.</string>
 </resources>
