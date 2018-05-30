@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/name_list_item_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:autoSizeTextType="uniform"
+        android:layout_marginTop="8dp"
+        android:textColor="#2b3d4d"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Book Title"
+        tools:targetApi="o" />
+
+    <TextView
+        android:id="@+id/price_list_item_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:layout_marginTop="8dp"
+        android:textColor="#aeb6db"
+        app:layout_constraintStart_toStartOf="@+id/name_list_item_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/name_list_item_text_view"
+        tools:text="£350"
+        tools:targetApi="o" />
+
+    <TextView
+        android:id="@+id/quantity_list_item_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:autoSizeTextType="uniform"
+        android:textColor="#aeb6db"
+        app:layout_constraintStart_toStartOf="@+id/price_list_item_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/price_list_item_text_view"
+        tools:text="In stock : 23"
+        tools:targetApi="o" />
+
+    <android.support.design.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/shop_button_text"
+        android:autoSizeTextType="uniform"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:cornerRadius="8dp"
+        app:icon="@drawable/ic_shopping_basket"
+        app:layout_constraintBottom_toBottomOf="@+id/quantity_list_item_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:targetApi="o" />
+</android.support.constraint.ConstraintLayout>

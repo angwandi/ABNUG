@@ -42,7 +42,7 @@ public class EditorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.editor_activity);
+        setContentView(R.layout.activity_editor);
         // Find all relevant views that we will need to read user input from
         bookTitleEditText = findViewById(R.id.title_edit_text);
         priceEditText = findViewById(R.id.price_edit_text);
