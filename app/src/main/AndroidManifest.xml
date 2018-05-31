@@ -23,5 +23,10 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/EditorTheme"
             tools:targetApi="jelly_bean" />
+        <activity
+            android:name=".DetailsActivity"
+            android:label="Book detail"
+            android:parentActivityName=".MainActivity"
+            tools:targetApi="jelly_bean" />
     </application>
 </manifest>

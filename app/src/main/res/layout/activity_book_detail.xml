@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title_details_textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="72dp"
+                android:layout_marginStart="72dp"
+                android:layout_marginTop="16dp"
+                android:autoSizeTextType="uniform"
+                android:text="Title"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/title_input_details_textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Book Title"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                app:layout_constraintStart_toStartOf="@+id/title_details_textView"
+                app:layout_constraintTop_toBottomOf="@+id/title_details_textView" />
+
+            <TextView
+                android:id="@+id/price_detail_textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:autoSizeTextType="uniform"
+                android:text="Price"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="@+id/title_input_details_textView"
+                app:layout_constraintTop_toBottomOf="@+id/title_input_details_textView" />
+
+            <TextView
+                android:id="@+id/price_input_details_textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:text="£40000000"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                app:layout_constraintBottom_toTopOf="@+id/quantity_detail_textView"
+                app:layout_constraintStart_toStartOf="@+id/price_detail_textView"
+                app:layout_constraintTop_toBottomOf="@+id/price_detail_textView"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/quantity_detail_textView"
+                android:layout_width="0dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="16dp"
+                android:autoSizeTextType="uniform"
+                android:text="In Stock"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="@+id/price_input_details_textView"
+                app:layout_constraintTop_toBottomOf="@+id/price_input_details_textView" />
+
+            <TextView
+                android:id="@+id/quantity_input_detail_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="40"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                app:layout_constraintBaseline_toBaselineOf="@+id/minus"
+                app:layout_constraintEnd_toStartOf="@+id/add"
+                app:layout_constraintStart_toEndOf="@+id/minus" />
+
+            <TextView
+                android:id="@+id/supply_name_detail_textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:autoSizeTextType="uniform"
+                android:text="Supply Name"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toTopOf="@+id/supply_name_input_details_textView"
+                app:layout_constraintStart_toStartOf="@+id/minus"
+                app:layout_constraintTop_toBottomOf="@+id/minus" />
+
+            <TextView
+                android:id="@+id/supply_name_input_details_textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Google books"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                app:layout_constraintStart_toStartOf="@+id/supply_name_detail_textView"
+                app:layout_constraintTop_toBottomOf="@+id/supply_name_detail_textView" />
+
+            <TextView
+                android:id="@+id/supply_phone_details_textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:autoSizeTextType="uniform"
+                android:text="Supply Phone"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="@+id/supply_name_input_details_textView"
+                app:layout_constraintTop_toBottomOf="@+id/supply_name_input_details_textView" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:text="+243 7880640470"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/supply_phone_details_textView"
+                app:layout_constraintTop_toBottomOf="@+id/supply_phone_details_textView"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/add"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:gravity="center"
+                android:minHeight="48dp"
+                android:minWidth="48dp"
+                android:text="+"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                app:cornerRadius="15dp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/quantity_input_detail_textView"
+                app:layout_constraintStart_toEndOf="@+id/quantity_input_detail_textView" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/minus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center"
+                android:minHeight="48dp"
+                android:minWidth="48dp"
+                android:text="-"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                app:cornerRadius="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/quantity_input_detail_textView"
+                app:layout_constraintStart_toStartOf="@+id/quantity_detail_textView"
+                app:layout_constraintTop_toBottomOf="@+id/quantity_detail_textView" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/call"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:gravity="center"
+                android:minHeight="48dp"
+                android:minWidth="48dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                app:cornerRadius="15dp"
+                app:icon="@drawable/ic_call"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView22"
+                app:layout_constraintStart_toEndOf="@+id/textView22" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_delete_forever"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:backgroundTint="@android:color/holo_red_light"
+        app:rippleColor="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_delete_forever" />
+</android.support.design.widget.CoordinatorLayout>
+
