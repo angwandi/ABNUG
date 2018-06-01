@@ -16,4 +16,7 @@
     <string name="editor_menu_save">Save</string>
     <string name="editor_menu_delete">Delete</string>
     <string name="shop_button_text">Shop</string>
+    <string name="emptyView_primary_text">Books</string>
+    <string name="emptyView_secondary_text1">Your space to fill with books.</string>
+    <string name="emptyView_secondary_text2">Start building your collection now.</string>
 </resources>
