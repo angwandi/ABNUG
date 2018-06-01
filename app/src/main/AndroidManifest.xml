@@ -28,5 +28,11 @@
             android:label="Book detail"
             android:parentActivityName=".MainActivity"
             tools:targetApi="jelly_bean" />
+
+        <provider
+            android:name=".Data.BookProvider"
+            android:authorities="com.example.demad.inventoryapp1"
+            android:exported="false"
+            tools:ignore="InnerclassSeparator" />
     </application>
 </manifest>
