@@ -1,25 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        style="@style/textView_textView_style"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Will be used for Displaying Added books for test!" />
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/textView_textView_style"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Will be used for Displaying Added books for test!" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.design.bottomappbar.BottomAppBar
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabAlignmentMode="center"
+        app:fabAttached="true"
+        app:fabCradleVerticalOffset="5dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"
         style="@style/fab_style"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:rippleColor="@color/colorPrimaryDark"
-        app:srcCompat="@drawable/ic_fab" />
-</android.support.constraint.ConstraintLayout>
+        app:srcCompat="@drawable/ic_fab"
+        app:backgroundTint="#65ba69"
+        app:layout_anchor="@id/bottomBar"/>
+</android.support.design.widget.CoordinatorLayout>
+
+
