@@ -64,7 +64,7 @@ public class BookCursorAdapter extends CursorAdapter {
         String bookTitle = cursor.getString(titleColumnIndex);
         String bookPrice = cursor.getString(priceColumnIndex);
         String bookQuantity = cursor.getString(quantityColumnIndex);
-        // Update the TextViews with the attributes for the current pet
+        // Update the TextViews with the attributes for the current book
         titleTextView.setText(bookTitle);
         priceTextView.setText(String.format("£%s", bookPrice));
         quantityTextView.setText(bookQuantity);

@@ -31,4 +31,5 @@
     <string name="supply_phone_input_details">+243 7880640470</string>
     <string name="add_details_button">+</string>
     <string name="minus_details_button">-</string>
+    <string name="empty_supplyName_details_textUtils">None</string>
 </resources>
