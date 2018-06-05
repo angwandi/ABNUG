@@ -30,7 +30,7 @@
             tools:targetApi="jelly_bean" />
 
         <provider
-            android:name=".Data.BookProvider"
+            android:name=".data.BookProvider"
             android:authorities="com.example.demad.inventoryapp1"
             android:exported="false"
             tools:ignore="InnerclassSeparator" />

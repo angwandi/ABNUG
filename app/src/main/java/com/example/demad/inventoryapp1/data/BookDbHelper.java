@@ -1,10 +1,10 @@
-package com.example.demad.inventoryapp1.Data;
+package com.example.demad.inventoryapp1.data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import static com.example.demad.inventoryapp1.Data.BookContract.BookEntry.*;
+import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
 
 /**
  * Displays list of books that were entered and stored in the app.

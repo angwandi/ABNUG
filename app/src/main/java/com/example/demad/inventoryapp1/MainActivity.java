@@ -14,9 +14,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.demad.inventoryapp1.Data.BookDbHelper;
+import com.example.demad.inventoryapp1.data.BookDbHelper;
 
-import static com.example.demad.inventoryapp1.Data.BookContract.BookEntry.*;
+import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
 
 public class MainActivity extends AppCompatActivity {
     /**

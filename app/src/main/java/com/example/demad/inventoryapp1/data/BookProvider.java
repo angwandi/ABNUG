@@ -1,4 +1,4 @@
-package com.example.demad.inventoryapp1.Data;
+package com.example.demad.inventoryapp1.data;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;

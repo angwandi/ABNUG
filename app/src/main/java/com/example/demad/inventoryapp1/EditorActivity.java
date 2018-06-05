@@ -10,9 +10,9 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.demad.inventoryapp1.Data.BookDbHelper;
+import com.example.demad.inventoryapp1.data.BookDbHelper;
 
-import static com.example.demad.inventoryapp1.Data.BookContract.BookEntry.*;
+import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
 
 /**
  * Allows user to create a new book or edit an existing one.
