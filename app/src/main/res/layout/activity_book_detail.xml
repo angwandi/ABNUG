@@ -24,7 +24,7 @@
                 android:layout_marginStart="72dp"
                 android:layout_marginTop="16dp"
                 android:autoSizeTextType="uniform"
-                android:text="Title"
+                android:text="@string/title_details"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textColor="@android:color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Book Title"
+                android:text="@string/title_input_details"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 app:layout_constraintStart_toStartOf="@+id/title_details_textView"
                 app:layout_constraintTop_toBottomOf="@+id/title_details_textView" />
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:autoSizeTextType="uniform"
-                android:text="Price"
+                android:text="@string/price_details"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textColor="@android:color/black"
                 app:layout_constraintStart_toStartOf="@+id/title_input_details_textView"
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:layout_marginTop="16dp"
-                android:text="£40000000"
+                android:text="@string/price_input_details"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 app:layout_constraintBottom_toTopOf="@+id/quantity_detail_textView"
                 app:layout_constraintStart_toStartOf="@+id/price_detail_textView"
@@ -73,18 +73,19 @@
                 android:layout_height="33dp"
                 android:layout_marginTop="16dp"
                 android:autoSizeTextType="uniform"
-                android:text="In Stock"
+                android:text="@string/quantity_details"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textColor="@android:color/black"
                 app:layout_constraintStart_toStartOf="@+id/price_input_details_textView"
-                app:layout_constraintTop_toBottomOf="@+id/price_input_details_textView" />
+                app:layout_constraintTop_toBottomOf="@+id/price_input_details_textView"
+                tools:targetApi="o" />
 
             <TextView
                 android:id="@+id/quantity_input_detail_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="40"
+                android:text="@string/quantity_input_details"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 app:layout_constraintBaseline_toBaselineOf="@+id/minus"
                 app:layout_constraintEnd_toStartOf="@+id/add"
@@ -97,19 +98,20 @@
                 android:layout_marginBottom="16dp"
                 android:layout_marginTop="8dp"
                 android:autoSizeTextType="uniform"
-                android:text="Supply Name"
+                android:text="@string/supply_name_details"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textColor="@android:color/black"
                 app:layout_constraintBottom_toTopOf="@+id/supply_name_input_details_textView"
                 app:layout_constraintStart_toStartOf="@+id/minus"
-                app:layout_constraintTop_toBottomOf="@+id/minus" />
+                app:layout_constraintTop_toBottomOf="@+id/minus"
+                tools:targetApi="o" />
 
             <TextView
                 android:id="@+id/supply_name_input_details_textView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Google books"
+                android:text="@string/supply_name_input_details"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 app:layout_constraintStart_toStartOf="@+id/supply_name_detail_textView"
                 app:layout_constraintTop_toBottomOf="@+id/supply_name_detail_textView" />
@@ -120,24 +122,27 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:autoSizeTextType="uniform"
-                android:text="Supply Phone"
+                android:text="@string/supply_phone_details"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textColor="@android:color/black"
                 app:layout_constraintStart_toStartOf="@+id/supply_name_input_details_textView"
-                app:layout_constraintTop_toBottomOf="@+id/supply_name_input_details_textView" />
+                app:layout_constraintTop_toBottomOf="@+id/supply_name_input_details_textView"
+                tools:targetApi="o" />
 
             <TextView
-                android:id="@+id/textView22"
+                android:id="@+id/supply_phone_input_details_textView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:text="+243 7880640470"
+                android:autoSizeTextType="uniform"
+                android:text="@string/supply_phone_input_details"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/supply_phone_details_textView"
                 app:layout_constraintTop_toBottomOf="@+id/supply_phone_details_textView"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                tools:targetApi="o" />
 
             <android.support.design.button.MaterialButton
                 android:id="@+id/add"
@@ -148,7 +153,7 @@
                 android:gravity="center"
                 android:minHeight="48dp"
                 android:minWidth="48dp"
-                android:text="+"
+                android:text="@string/add_details_button"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
@@ -168,7 +173,7 @@
                 android:gravity="center"
                 android:minHeight="48dp"
                 android:minWidth="48dp"
-                android:text="-"
+                android:text="@string/minus_details_button"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
@@ -193,8 +198,8 @@
                 android:textStyle="bold"
                 app:cornerRadius="5dp"
                 app:icon="@drawable/ic_call"
-                app:layout_constraintBaseline_toBaselineOf="@+id/textView22"
-                app:layout_constraintStart_toEndOf="@+id/textView22"
+                app:layout_constraintBaseline_toBaselineOf="@+id/supply_phone_input_details_textView"
+                app:layout_constraintStart_toEndOf="@+id/supply_phone_input_details_textView"
                 app:strokeColor="#65ba69"
                 app:strokeWidth="3dp" />
         </android.support.constraint.ConstraintLayout>
