@@ -1,28 +1,42 @@
 package com.example.demad.inventoryapp1;
 
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.bottomappbar.BottomAppBar;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.CursorLoader;
+import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
-import com.example.demad.inventoryapp1.data.BookDbHelper;
+import com.example.demad.inventoryapp1.data.BookContract;
 
-import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
+import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME;
+import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements
+        LoaderManager.LoaderCallbacks<Cursor> {
     /**
-     * Database helper that will provide us access to the database
+     * Identifier for the book data loader
      */
-    private BookDbHelper mDbHelper;
+    private static final int BOOK_LOADER = 0;
+    /**
+     * Adapter for the ListView
+     */
+    BookCursorAdapter bookCursorAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,40 +45,72 @@ public class MainActivity extends AppCompatActivity {
         /*Setup BAB */
         BottomAppBar bottomAppBar = findViewById(R.id.bottomBar);
         bottomAppBar.replaceMenu(R.menu.main_menu);
-        // Setup FAB to open EditorActivity
-        FloatingActionButton fab = findViewById(R.id.floatingActionButton);
+        // Setup FAB to open AddBookActivity
+        FloatingActionButton fab = findViewById(R.id.fab_main);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, EditorActivity.class);
+                Intent intent = new Intent(MainActivity.this, AddBookActivity.class);
                 startActivity(intent);
             }
         });
+        // Find the ListView which will be populated with the book data
+        ListView bookListView = findViewById(R.id.list);
+        // Find and set empty view on the ListView, so that it only shows when the list has 0 items.
+        View emptyView = findViewById(R.id.empty_View);
+        bookListView.setEmptyView(emptyView);
+        // Setup an Adapter to create a list item for each row of book data in the Cursor.
+        bookCursorAdapter = new BookCursorAdapter(this, null);
+        bookListView.setAdapter(bookCursorAdapter);
+       /* Button shopButton = bookListView.findViewById(R.id.shop_list_item_button);
+        shopButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "minus quantity", Toast.LENGTH_SHORT).show();
+            }
+        });*/
+        // Setup the item click listener
+        bookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                // Create new intent to go to {@link DetailsActivity}
+                Intent detailsIntent = new Intent(MainActivity.this, DetailsActivity.class);
+                // Form the content URI that represents the specific book that was clicked on,
+                // by appending the "id" (passed as input to this method) onto the
+                // {@link BookEntry#CONTENT_URI}.
+                Uri currentBookUri = ContentUris.withAppendedId(BookContract.BookEntry.CONTENT_URI, id);
+                // Set the URI on the data field of the intent
+                detailsIntent.setData(currentBookUri);
+                // Launch the {@link DetailsActivity} to display the data for the current book.
+                startActivity(detailsIntent);
+            }
+        });
+        // Kick off the loader
+        getSupportLoaderManager().initLoader(BOOK_LOADER, null, this);
     }
 
     /**
      * Helper method to insert hardcoded pet data into the database. For debugging purposes only.
      */
     private void insertBook() {
-        // Gets the database in write mode
-        SQLiteDatabase db = mDbHelper.getReadableDatabase();
         // Create a ContentValues object where column names are the keys,
         // and The book of life's book attributes are the values.
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COLUMN_BOOK_TITLE, "The Book life");
-        contentValues.put(COLUMN_BOOK_PRICE, "29");
-        contentValues.put(COLUMN_BOOK_QUANTITY, "5");
+        contentValues.put(BookContract.BookEntry.COLUMN_BOOK_TITLE, "The Book life");
+        contentValues.put(BookContract.BookEntry.COLUMN_BOOK_PRICE, "29");
+        contentValues.put(BookContract.BookEntry.COLUMN_BOOK_QUANTITY, "5");
         contentValues.put(COLUMN_BOOK_SUPPLY_NAME, "Google Books");
         contentValues.put(COLUMN_BOOK_SUPPLY_PHONE, "(+44)7880640470");
-        // Insert a new row for The book of life in the database, returning the ID of that new row.
-        // The first argument for db.insert() is the books table name.
-        // The second argument provides the name of a column in which the framework
-        // can insert NULL in the event that the ContentValues is empty (if
-        // this is set to "null", then the framework will not insert a row when
-        // there are no values).
-        // The third argument is the ContentValues object containing the info for the book of life.
-        long newRowID = db.insert(TABLE_NAME, null, contentValues);
-        Log.v("MainActivity", "New Row ID" + newRowID);
+        // Receive the new content URI that will allow us to access The book life's data in the future.
+        Uri newUri = getContentResolver().insert(BookContract.BookEntry.CONTENT_URI, contentValues);
+    }
+
+    /**
+     * Helper method to delete all pets in the database.
+     */
+    private void deleteAllBooks() {
+        int rowsDeleted = getContentResolver().delete(BookContract.BookEntry.CONTENT_URI, null, null);
+        Log.v("MainActivity", rowsDeleted + "rows deleted from book database");
     }
 
     /**
@@ -92,9 +138,39 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             // Respond to a click on the "Delete all entries" menu option
             case R.id.action_delete_all_entries:
-                //Do nothing for now
+                deleteAllBooks();
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @NonNull
+    @Override
+    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
+        // Define a projection that specifies the columns from the table we care about.
+        String[] projection = {
+                BookContract.BookEntry._ID,
+                BookContract.BookEntry.COLUMN_BOOK_TITLE,
+                BookContract.BookEntry.COLUMN_BOOK_PRICE,
+                BookContract.BookEntry.COLUMN_BOOK_QUANTITY};
+        // This loader will execute the ContentProvider's query method on a background thread
+        return new CursorLoader(this,  // Parent activity context
+                BookContract.BookEntry.CONTENT_URI, // Provider content URI to query
+                projection,                        // Columns to include in the resulting Cursor
+                null,                      // No selection clause
+                null,                  // No selection arguments
+                null);                   // Default sort order
+    }
+
+    @Override
+    public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
+        // Update {@link BookCursorAdapter} with this new cursor containing updated book data
+        bookCursorAdapter.swapCursor(data);
+    }
+
+    @Override
+    public void onLoaderReset(@NonNull Loader<Cursor> loader) {
+        // Callback called when the data needs to be deleted
+        bookCursorAdapter.swapCursor(null);
     }
 }

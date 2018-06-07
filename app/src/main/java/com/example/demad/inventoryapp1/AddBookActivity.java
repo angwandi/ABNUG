@@ -17,7 +17,7 @@ import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
 /**
  * Allows user to create a new book or edit an existing one.
  */
-public class EditorActivity extends AppCompatActivity {
+public class AddBookActivity extends AppCompatActivity {
     /**
      * Edit field to enter the book title
      */

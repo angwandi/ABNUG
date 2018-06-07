@@ -20,8 +20,8 @@
                 android:id="@+id/title_details_textView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="72dp"
-                android:layout_marginStart="72dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:autoSizeTextType="uniform"
                 android:text="@string/title_details"
@@ -36,10 +36,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/title_input_details"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 app:layout_constraintStart_toStartOf="@+id/title_details_textView"
-                app:layout_constraintTop_toBottomOf="@+id/title_details_textView" />
+                app:layout_constraintTop_toBottomOf="@+id/title_details_textView"
+                tools:text="@string/title_input_details" />
 
             <TextView
                 android:id="@+id/price_detail_textView"
@@ -60,12 +60,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/price_input_details"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 app:layout_constraintBottom_toTopOf="@+id/quantity_detail_textView"
                 app:layout_constraintStart_toStartOf="@+id/price_detail_textView"
                 app:layout_constraintTop_toBottomOf="@+id/price_detail_textView"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="@string/price_input_details" />
 
             <TextView
                 android:id="@+id/quantity_detail_textView"
@@ -85,11 +85,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/quantity_input_details"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 app:layout_constraintBaseline_toBaselineOf="@+id/minus"
                 app:layout_constraintEnd_toStartOf="@+id/add"
-                app:layout_constraintStart_toEndOf="@+id/minus" />
+                app:layout_constraintStart_toEndOf="@+id/minus"
+                tools:text="@string/quantity_input_details" />
 
             <TextView
                 android:id="@+id/supply_name_detail_textView"
@@ -111,10 +111,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/supply_name_input_details"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 app:layout_constraintStart_toStartOf="@+id/supply_name_detail_textView"
-                app:layout_constraintTop_toBottomOf="@+id/supply_name_detail_textView" />
+                app:layout_constraintTop_toBottomOf="@+id/supply_name_detail_textView"
+                tools:text="@string/supply_name_input_details" />
 
             <TextView
                 android:id="@+id/supply_phone_details_textView"
@@ -136,13 +136,13 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:autoSizeTextType="uniform"
-                android:text="@string/supply_phone_input_details"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/supply_phone_details_textView"
                 app:layout_constraintTop_toBottomOf="@+id/supply_phone_details_textView"
                 app:layout_constraintVertical_bias="0.0"
-                tools:targetApi="o" />
+                tools:targetApi="o"
+                tools:text="@string/supply_phone_input_details" />
 
             <android.support.design.button.MaterialButton
                 android:id="@+id/add"
@@ -210,19 +210,5 @@
                 app:strokeWidth="3dp" />
         </android.support.constraint.ConstraintLayout>
     </android.support.v4.widget.NestedScrollView>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_delete_forever"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|top"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:backgroundTint="@android:color/holo_red_light"
-        app:rippleColor="@color/colorPrimary"
-        app:srcCompat="@drawable/ic_delete_forever" />
 </android.support.design.widget.CoordinatorLayout>
 

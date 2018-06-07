@@ -1,3 +1,5 @@
+package com.example.demad.inventoryapp1;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.view.LayoutInflater;
@@ -6,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.demad.inventoryapp1.R;
 import com.example.demad.inventoryapp1.data.BookContract;
 
 /**
@@ -22,7 +24,7 @@ public class BookCursorAdapter extends CursorAdapter {
      * @param context The context
      * @param cursor  The cursor from which to get the data.
      */
-    public BookCursorAdapter(Context context, Cursor cursor) {
+    BookCursorAdapter(Context context, Cursor cursor) {
         super(context, cursor, 0);
     }
 
@@ -51,19 +53,30 @@ public class BookCursorAdapter extends CursorAdapter {
      *                correct row.
      */
     @Override
-    public void bindView(View view, Context context, Cursor cursor) {
+    public void bindView(View view, final Context context, final Cursor cursor) {
         // Find individual views that we want to modify in the list item layout
         TextView titleTextView = view.findViewById(R.id.title_list_item_text_view);
         TextView priceTextView = view.findViewById(R.id.price_list_item_text_view);
-        TextView quantityTextView = view.findViewById(R.id.quantity_list_item_text_view);
-        Button shop = view.findViewById(R.id.shop_list_item_button);
+        final TextView quantityTextView = view.findViewById(R.id.quantity_list_item_text_view);
+        Button shopButton = view.findViewById(R.id.shop_list_item_button);
         // Find the columns of book attributes that we're interested in
         int titleColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_TITLE);
         int priceColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_PRICE);
-        int quantityColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_QUANTITY);
+        final int quantityColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_QUANTITY);
         String bookTitle = cursor.getString(titleColumnIndex);
         String bookPrice = cursor.getString(priceColumnIndex);
         String bookQuantity = cursor.getString(quantityColumnIndex);
+        shopButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int quantities = quantityColumnIndex - 1;
+                if (quantities > 1) {
+                    quantityTextView.setText(String.valueOf(quantities));
+
+                } else
+                    Toast.makeText(context, "Added to bucket!", Toast.LENGTH_SHORT).show();
+            }
+        });
         // Update the TextViews with the attributes for the current book
         titleTextView.setText(bookTitle);
         priceTextView.setText(String.format("£%s", bookPrice));

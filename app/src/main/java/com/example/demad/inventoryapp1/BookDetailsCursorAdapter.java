@@ -1,3 +1,5 @@
+package com.example.demad.inventoryapp1;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.text.TextUtils;
@@ -7,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
-import com.example.demad.inventoryapp1.R;
-import com.example.demad.inventoryapp1.data.BookContract;
+import static com.example.demad.inventoryapp1.data.BookContract.*;
+import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
 
 public class BookDetailsCursorAdapter extends CursorAdapter {
     public BookDetailsCursorAdapter(Context context, Cursor c) {
@@ -29,11 +31,11 @@ public class BookDetailsCursorAdapter extends CursorAdapter {
         TextView supplyNameTextView = view.findViewById(R.id.supply_name_input_details_textView);
         TextView supplyPhoneTextView = view.findViewById(R.id.supply_phone_input_details_textView);
         // Find the columns of books attributes that we're interested in
-        int titleColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_TITLE);
-        int priceColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_PRICE);
-        int quantityColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_QUANTITY);
-        int supplyNameColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME);
-        int supplyPhoneColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE);
+        int titleColumnIndex = cursor.getColumnIndex(COLUMN_BOOK_TITLE);
+        int priceColumnIndex = cursor.getColumnIndex(COLUMN_BOOK_PRICE);
+        int quantityColumnIndex = cursor.getColumnIndex(COLUMN_BOOK_QUANTITY);
+        int supplyNameColumnIndex = cursor.getColumnIndex(COLUMN_BOOK_SUPPLY_NAME);
+        int supplyPhoneColumnIndex = cursor.getColumnIndex(COLUMN_BOOK_SUPPLY_PHONE);
         // Read the book attributes from the Cursor for the current book
         String title = cursor.getString(titleColumnIndex);
         String price = cursor.getString(priceColumnIndex);

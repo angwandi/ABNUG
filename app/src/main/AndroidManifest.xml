@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".EditorActivity"
+            android:name=".AddBookActivity"
             android:label="Add a book"
             android:parentActivityName=".MainActivity"
             android:theme="@style/EditorTheme"
