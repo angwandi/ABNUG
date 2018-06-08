@@ -13,6 +13,7 @@ import android.widget.ListView;
 
 import com.example.demad.inventoryapp1.data.BookContract;
 
+import static com.example.demad.inventoryapp1.data.BookContract.*;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_PRICE;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE;
@@ -40,10 +41,10 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
     public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
         // Define a projection that specifies the columns from the table we care about.
         String[] projection = {
-                BookContract.BookEntry._ID,
+                BookEntry._ID,
                 COLUMN_BOOK_TITLE,
                 COLUMN_BOOK_PRICE,
-                BookContract.BookEntry.COLUMN_BOOK_QUANTITY,
+                BookEntry.COLUMN_BOOK_QUANTITY,
                 COLUMN_BOOK_SUPPLY_NAME,
                 COLUMN_BOOK_SUPPLY_PHONE};
         // This loader will execute the ContentProvider's query method on a background thread

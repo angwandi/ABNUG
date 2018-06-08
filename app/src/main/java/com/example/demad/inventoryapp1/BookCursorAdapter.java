@@ -62,24 +62,24 @@ public class BookCursorAdapter extends CursorAdapter {
         // Find the columns of book attributes that we're interested in
         int titleColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_TITLE);
         int priceColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_PRICE);
-        final int quantityColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_QUANTITY);
+        int quantityColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_QUANTITY);
         String bookTitle = cursor.getString(titleColumnIndex);
         String bookPrice = cursor.getString(priceColumnIndex);
-        String bookQuantity = cursor.getString(quantityColumnIndex);
+        final int bookQuantity = cursor.getInt(quantityColumnIndex);
         shopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int quantities = quantityColumnIndex - 1;
+                int quantities = bookQuantity - 1;
                 if (quantities > 1) {
                     quantityTextView.setText(String.valueOf(quantities));
-
-                } else
+                } else {
                     Toast.makeText(context, "Added to bucket!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         // Update the TextViews with the attributes for the current book
         titleTextView.setText(bookTitle);
         priceTextView.setText(String.format("£%s", bookPrice));
-        quantityTextView.setText(bookQuantity);
+        quantityTextView.setText(String.valueOf(bookQuantity));
     }
 }

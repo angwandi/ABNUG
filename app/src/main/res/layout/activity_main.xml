@@ -8,12 +8,12 @@
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:clipToPadding="false"
         android:layout_height="match_parent"
         android:clickable="true"
+        android:clipToPadding="false"
         android:focusable="true"
         android:scrollbars="none"
-        tools:listitem="@layout/list_item"/>
+        tools:listitem="@layout/list_item" />
     <!--Empty view-->
     <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -90,6 +90,7 @@
 
     <android.support.design.bottomappbar.BottomAppBar
         android:id="@+id/bottomBar"
+        style="@style/Widget.MaterialComponents.BottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -97,15 +98,17 @@
         app:backgroundTint="@color/colorPrimary"
         app:fabAlignmentMode="center"
         app:fabAttached="true"
-        app:fabCradleVerticalOffset="5dp"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_main"
-        style="@style/fab_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
         app:backgroundTint="#65ba69"
-        app:layout_anchor="@id/bottomBar"
         app:fabSize="normal"
+        app:layout_anchor="@id/bottomBar"
         app:srcCompat="@drawable/ic_fab" />
 </android.support.design.widget.CoordinatorLayout>
 
