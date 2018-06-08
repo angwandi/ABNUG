@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
-import static com.example.demad.inventoryapp1.data.BookContract.*;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
 
 public class BookDetailsCursorAdapter extends CursorAdapter {

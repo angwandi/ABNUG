@@ -24,6 +24,8 @@ import android.widget.ListView;
 
 import com.example.demad.inventoryapp1.data.BookContract;
 
+import static com.example.demad.inventoryapp1.data.BookContract.*;
+import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE;
 
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements
                 // Form the content URI that represents the specific book that was clicked on,
                 // by appending the "id" (passed as input to this method) onto the
                 // {@link BookEntry#CONTENT_URI}.
-                Uri currentBookUri = ContentUris.withAppendedId(BookContract.BookEntry.CONTENT_URI, id);
+                Uri currentBookUri = ContentUris.withAppendedId(CONTENT_URI, id);
                 // Set the URI on the data field of the intent
                 detailsIntent.setData(currentBookUri);
                 // Launch the {@link DetailsActivity} to display the data for the current book.
@@ -96,20 +98,20 @@ public class MainActivity extends AppCompatActivity implements
         // Create a ContentValues object where column names are the keys,
         // and The book of life's book attributes are the values.
         ContentValues contentValues = new ContentValues();
-        contentValues.put(BookContract.BookEntry.COLUMN_BOOK_TITLE, "The Book life");
-        contentValues.put(BookContract.BookEntry.COLUMN_BOOK_PRICE, "29");
-        contentValues.put(BookContract.BookEntry.COLUMN_BOOK_QUANTITY, "5");
+        contentValues.put(COLUMN_BOOK_TITLE, "The Book life");
+        contentValues.put(COLUMN_BOOK_PRICE, "29");
+        contentValues.put(COLUMN_BOOK_QUANTITY, "5");
         contentValues.put(COLUMN_BOOK_SUPPLY_NAME, "Google Books");
         contentValues.put(COLUMN_BOOK_SUPPLY_PHONE, "(+44)7880640470");
         // Receive the new content URI that will allow us to access The book life's data in the future.
-        Uri newUri = getContentResolver().insert(BookContract.BookEntry.CONTENT_URI, contentValues);
+        Uri newUri = getContentResolver().insert(CONTENT_URI, contentValues);
     }
 
     /**
      * Helper method to delete all pets in the database.
      */
     private void deleteAllBooks() {
-        int rowsDeleted = getContentResolver().delete(BookContract.BookEntry.CONTENT_URI, null, null);
+        int rowsDeleted = getContentResolver().delete(CONTENT_URI, null, null);
         Log.v("MainActivity", rowsDeleted + "rows deleted from book database");
     }
 
@@ -149,13 +151,13 @@ public class MainActivity extends AppCompatActivity implements
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
         // Define a projection that specifies the columns from the table we care about.
         String[] projection = {
-                BookContract.BookEntry._ID,
-                BookContract.BookEntry.COLUMN_BOOK_TITLE,
-                BookContract.BookEntry.COLUMN_BOOK_PRICE,
-                BookContract.BookEntry.COLUMN_BOOK_QUANTITY};
+                _ID,
+                COLUMN_BOOK_TITLE,
+                COLUMN_BOOK_PRICE,
+                COLUMN_BOOK_QUANTITY};
         // This loader will execute the ContentProvider's query method on a background thread
         return new CursorLoader(this,  // Parent activity context
-                BookContract.BookEntry.CONTENT_URI, // Provider content URI to query
+                CONTENT_URI, // Provider content URI to query
                 projection,                        // Columns to include in the resulting Cursor
                 null,                      // No selection clause
                 null,                  // No selection arguments
