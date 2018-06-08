@@ -45,12 +45,12 @@ public class MainActivity extends AppCompatActivity implements
         /*Setup BAB */
         BottomAppBar bottomAppBar = findViewById(R.id.bottomBar);
         bottomAppBar.replaceMenu(R.menu.main_menu);
-        // Setup FAB to open AddBookActivity
+        // Setup FAB to open EditorBookActivity
         FloatingActionButton fab = findViewById(R.id.fab_main);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddBookActivity.class);
+                Intent intent = new Intent(MainActivity.this, EditorBookActivity.class);
                 startActivity(intent);
             }
         });

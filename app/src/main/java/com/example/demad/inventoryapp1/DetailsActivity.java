@@ -11,18 +11,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.example.demad.inventoryapp1.data.BookContract;
-
 import static com.example.demad.inventoryapp1.data.BookContract.*;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_PRICE;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_TITLE;
-import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.CONTENT_URI;
 
 public class DetailsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     BookDetailsCursorAdapter bookDetailsCursorAdapter;
     private static final int BOOK_LOADER = 1;
+    /**
+     * Setup a new content URI
+     */
     private Uri currentContentURI;
 
     @Override
@@ -32,6 +32,7 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
         ListView detailsListView = findViewById(R.id.details_list);
         bookDetailsCursorAdapter = new BookDetailsCursorAdapter(this, null);
         detailsListView.setAdapter(bookDetailsCursorAdapter);
+        /*Get Intent and data for the new URI*/
         currentContentURI = getIntent().getData();
         getSupportLoaderManager().initLoader(BOOK_LOADER, null, this);
     }
@@ -49,7 +50,7 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
                 COLUMN_BOOK_SUPPLY_PHONE};
         // This loader will execute the ContentProvider's query method on a background thread
         return new CursorLoader(this,  // Parent activity context
-                currentContentURI, // Provider content URI to query
+                currentContentURI, // Provider content URI to query and load a single book details screen
                 projection,                        // Columns to include in the resulting Cursor
                 null,                      // No selection clause
                 null,                  // No selection arguments
