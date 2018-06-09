@@ -19,7 +19,7 @@
         </activity>
         <activity
             android:name=".EditorBookActivity"
-            android:label="Add a book"
+            android:label="Add book"
             android:parentActivityName=".MainActivity"
             android:theme="@style/EditorTheme"
             tools:targetApi="jelly_bean" />

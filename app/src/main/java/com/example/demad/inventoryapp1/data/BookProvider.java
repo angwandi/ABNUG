@@ -34,7 +34,7 @@ public class BookProvider extends ContentProvider {
     /**
      * URI matcher code for the content URI for a single book in the books table
      */
-    private static final int BOOK_ID = 701;
+    public static final int BOOK_ID = 701;
     /**
      * UriMatcher object to match a content URI to a corresponding code.
      * The input passed into the constructor represents the code to return for the root URI.

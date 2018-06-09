@@ -5,10 +5,8 @@ import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.demad.inventoryapp1.data.BookContract;
 
@@ -57,29 +55,17 @@ public class BookCursorAdapter extends CursorAdapter {
         // Find individual views that we want to modify in the list item layout
         TextView titleTextView = view.findViewById(R.id.title_list_item_text_view);
         TextView priceTextView = view.findViewById(R.id.price_list_item_text_view);
-        final TextView quantityTextView = view.findViewById(R.id.quantity_list_item_text_view);
-        Button shopButton = view.findViewById(R.id.shop_list_item_button);
+        TextView quantityTextView = view.findViewById(R.id.quantity_list_item_text_view);
         // Find the columns of book attributes that we're interested in
         int titleColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_TITLE);
         int priceColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_PRICE);
         int quantityColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_QUANTITY);
         String bookTitle = cursor.getString(titleColumnIndex);
         String bookPrice = cursor.getString(priceColumnIndex);
-        final int bookQuantity = cursor.getInt(quantityColumnIndex);
-        shopButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int quantities = bookQuantity - 1;
-                if (quantities > 1) {
-                    quantityTextView.setText(String.valueOf(quantities));
-                } else {
-                    Toast.makeText(context, "Added to bucket!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+        int bookQuantity = cursor.getInt(quantityColumnIndex);
         // Update the TextViews with the attributes for the current book
         titleTextView.setText(bookTitle);
         priceTextView.setText(String.format("£%s", bookPrice));
-        quantityTextView.setText(String.valueOf(bookQuantity));
+        quantityTextView.setText(String.valueOf("In stock : " + bookQuantity));
     }
 }

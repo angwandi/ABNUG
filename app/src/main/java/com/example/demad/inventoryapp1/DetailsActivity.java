@@ -1,21 +1,30 @@
 package com.example.demad.inventoryapp1;
 
+import android.content.ContentUris;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.Toast;
 
-import static com.example.demad.inventoryapp1.data.BookContract.*;
+import com.example.demad.inventoryapp1.data.BookContract;
+
+import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_PRICE;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE;
-import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_TITLE;
+import static com.example.demad.inventoryapp1.data.BookProvider.BOOK_ID;
 
 public class DetailsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     BookDetailsCursorAdapter bookDetailsCursorAdapter;
@@ -29,6 +38,23 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_details);
+        FloatingActionButton edit = findViewById(R.id.fab_edit);
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailsActivity.this, EditorBookActivity.class);
+                currentContentURI = getIntent().getData();
+                intent.setData(currentContentURI);
+                startActivity(intent);
+            }
+        });
+        FloatingActionButton delete = findViewById(R.id.fab_delete_forever);
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDeleteConfirmationDialog();
+            }
+        });
         ListView detailsListView = findViewById(R.id.details_list);
         bookDetailsCursorAdapter = new BookDetailsCursorAdapter(this, null);
         detailsListView.setAdapter(bookDetailsCursorAdapter);
@@ -42,10 +68,10 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
     public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
         // Define a projection that specifies the columns from the table we care about.
         String[] projection = {
-                BookEntry._ID,
-                COLUMN_BOOK_TITLE,
+                _ID,
+                BookContract.BookEntry.COLUMN_BOOK_TITLE,
                 COLUMN_BOOK_PRICE,
-                BookEntry.COLUMN_BOOK_QUANTITY,
+                COLUMN_BOOK_QUANTITY,
                 COLUMN_BOOK_SUPPLY_NAME,
                 COLUMN_BOOK_SUPPLY_PHONE};
         // This loader will execute the ContentProvider's query method on a background thread
@@ -65,5 +91,58 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
     @Override
     public void onLoaderReset(@NonNull Loader<Cursor> loader) {
         bookDetailsCursorAdapter.swapCursor(null);
+    }
+
+    /*
+     * Prompt the user to confirm that they want to delete this pet.
+     */
+    private void showDeleteConfirmationDialog() {
+        // Create an AlertDialog.Builder and set the message, and click listeners
+        // for the positive and negative buttons on the dialog.
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Delete this book?");
+        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // User clicked the "Delete" button, so delete the book.
+                deleteBook();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // User clicked the "Cancel" button, so dismiss the dialog
+                // and continue editing the book.
+                if (dialogInterface != null) {
+                    dialogInterface.dismiss();
+                }
+            }
+        });
+        // Create and show the AlertDialog
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    /*
+     * Perform the deletion of the book in the database.
+     */
+    public final void deleteBook() {
+        // Only perform the delete if this is an existing book.
+        if (currentContentURI != null) {
+            // Call the ContentResolver to delete the book at the given content URI.
+            // Pass in null for the selection and selection args because the currentEditorBookUri
+            // content URI already identifies the book that we want.
+            int rowsDeleted = getContentResolver().delete(currentContentURI, null, null);
+            // Show a toast message depending on whether or not the delete was successful.
+            if (rowsDeleted == 0) {
+                // If no rows were deleted, then there was an error with the delete.
+                Toast.makeText(this, "Error with deleting book", Toast.LENGTH_SHORT).show();
+            } else {
+                // Otherwise, the delete was successful and we can display a toast.
+                Toast.makeText(this, "Book deleted", Toast.LENGTH_SHORT).show();
+            }
+        }
+        // Close the activity
+        finish();
     }
 }
