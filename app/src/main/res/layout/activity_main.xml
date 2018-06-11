@@ -22,20 +22,21 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/emptyView_imageView"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:contentDescription="@string/book"
-            android:scaleType="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintCircleRadius="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.17"
-            app:srcCompat="@drawable/ic_library_books"
-            tools:targetApi="lollipop" />
+          android:id="@+id/emptyView_imageView"
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          android:backgroundTint="@color/colorPrimaryDark"
+          android:contentDescription="@string/book"
+          android:scaleType="center"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintCircleRadius="16dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.498"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.317"
+          app:srcCompat="@drawable/ic_library_books"
+          tools:targetApi="lollipop" />
 
         <TextView
             android:id="@+id/emptyView_primary_text_textView2"
