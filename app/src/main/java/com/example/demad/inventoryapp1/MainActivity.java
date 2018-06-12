@@ -21,13 +21,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.demad.inventoryapp1.data.BookContract;
 
 import static com.example.demad.inventoryapp1.data.BookContract.*;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE;
-
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
     /**
@@ -88,6 +88,20 @@ public class MainActivity extends AppCompatActivity implements
         });
         // Kick off the loader
         getSupportLoaderManager().initLoader(BOOK_LOADER, null, this);
+    }
+
+    public void shopButton(int bookId, int bookQuantity) {
+        bookQuantity = bookQuantity - 1;
+        if (bookQuantity >= 0) {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(BookEntry.COLUMN_BOOK_QUANTITY, bookQuantity);
+            Uri currentUri = ContentUris.withAppendedId(BookEntry.CONTENT_URI, bookId);
+            int rowsAffected = getContentResolver().update(currentUri, contentValues, null, null);
+            Toast.makeText(this, "Added to bucket", Toast.LENGTH_SHORT).show();
+            Log.e("Log message", "rowsAffected " + rowsAffected + bookId + bookQuantity);
+        } else {
+            Toast.makeText(this, "Book out of stock!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**

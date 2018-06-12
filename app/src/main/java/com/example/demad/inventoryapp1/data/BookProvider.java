@@ -158,13 +158,13 @@ public class BookProvider extends ContentProvider {
         }
         // Check that the price is valid and not null
         Integer price = contentValues.getAsInteger(COLUMN_BOOK_PRICE);
-        if (price == null) {
-            throw new IllegalArgumentException("Price is required!");
+        if (price != null && price < 0) {
+            throw new IllegalArgumentException("Valid Price is required!");
         }
         // if the quantity is provided, check that it's greater than or equal to 0
         Integer quantity = contentValues.getAsInteger(COLUMN_BOOK_QUANTITY);
         if (quantity != null && quantity < 0) {
-            throw new IllegalArgumentException("Quantity must be 0 or greater than 0!");
+            throw new IllegalArgumentException("Quantity must be 0 upwards");
         }
         /*
         No need to check Supply name, any values is valid (including null).
@@ -174,7 +174,7 @@ public class BookProvider extends ContentProvider {
         if (phone == null) {
             throw new IllegalArgumentException("Phone number is required!");
         }
-        // Get writeable database
+        // Get writable database
         SQLiteDatabase database = mDBHelper.getWritableDatabase();
         // Insert the new book with the given values
         long id = database.insert(TABLE_NAME, null, contentValues);
@@ -270,7 +270,7 @@ public class BookProvider extends ContentProvider {
         */
         if (contentValues.containsKey(COLUMN_BOOK_PRICE)) {
             Integer price = contentValues.getAsInteger(COLUMN_BOOK_PRICE);
-            if (price == null) {
+            if (price != null && price < 0) {
                 throw new IllegalArgumentException("Price is required!");
             }
         }
