@@ -11,6 +11,7 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
+import android.text.TextUtils;
 import android.util.Log;
 
 import java.util.Objects;
@@ -18,7 +19,6 @@ import java.util.Objects;
 import static com.example.demad.inventoryapp1.data.BookContract.*;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
 import static java.util.Objects.*;
-
 /**
  * {@link ContentProvider} for Books app.
  */

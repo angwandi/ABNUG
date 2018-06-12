@@ -17,16 +17,16 @@ public final class BookContract {
     /**
      * SetUp the Content authority to use in the {@link BookProvider} content provider
      */
-    public static final String CONTENT_AUTHORITY = "com.example.demad.inventoryapp1";
+    static final String CONTENT_AUTHORITY = "com.example.demad.inventoryapp1";
     /**
      * Using CONTENT_AUTHORITY to create the base of all URI's which apps will use to contact
      * the content provider.
      */
-    public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
+    static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
     /**
      * SetUp a path for books to be appended to the base content URI for possible URI's
      */
-    public static final String PATH_BOOKS = "books";
+    static final String PATH_BOOKS = "books";
 
     /**
      * Inner class that defines constant values for the books database table.
@@ -40,17 +40,17 @@ public final class BookContract {
         /**
          * The MIME type of the {@link #CONTENT_URI} for a list of books.
          */
-        public static final String CONTENT_LIST_TYPE =
+        static final String CONTENT_LIST_TYPE =
                 ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_BOOKS;
         /*
          * The MIME type of the {@link #CONTENT_URI} for a single book.
          */
-        public static final String CONTENT_ITEM_TYPE =
+        static final String CONTENT_ITEM_TYPE =
                 ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_BOOKS;
         /**
          * Name of database table for books
          */
-        public static final String TABLE_NAME = "books";
+        static final String TABLE_NAME = "books";
         /**
          * Unique ID number for the book (only for use in the database table).
          * <p>
