@@ -5,11 +5,11 @@ import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
 import com.example.demad.inventoryapp1.data.BookContract;
-
 /**
  * {@link BookCursorAdapter} is an adapter for a list
  * that uses a {@link Cursor} of book data as its data source. This adapter knows
@@ -56,13 +56,23 @@ public class BookCursorAdapter extends CursorAdapter {
         TextView titleTextView = view.findViewById(R.id.title_list_item_text_view);
         TextView priceTextView = view.findViewById(R.id.price_list_item_text_view);
         TextView quantityTextView = view.findViewById(R.id.quantity_list_item_text_view);
+        Button shoppingButton = view.findViewById(R.id.shop_list_item_button);
         // Find the columns of book attributes that we're interested in
+        final int idColumnIndex = cursor.getColumnIndex(BookContract.BookEntry._ID);
         int titleColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_TITLE);
         int priceColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_PRICE);
         int quantityColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_QUANTITY);
+        final String bookID = cursor.getString(idColumnIndex);
         String bookTitle = cursor.getString(titleColumnIndex);
         String bookPrice = cursor.getString(priceColumnIndex);
-        int bookQuantity = cursor.getInt(quantityColumnIndex);
+        final int bookQuantity = cursor.getInt(quantityColumnIndex);
+        shoppingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity mainActivity = (MainActivity) context;
+                mainActivity.shopButton(Integer.valueOf(bookID), bookQuantity);
+            }
+        });
         // Update the TextViews with the attributes for the current book
         titleTextView.setText(bookTitle);
         priceTextView.setText(String.format("£%s", bookPrice));
