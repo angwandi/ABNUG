@@ -2,6 +2,7 @@ package com.example.demad.inventoryapp1;
 
 import android.content.ContentUris;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -13,6 +14,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -153,21 +155,47 @@ public class MainActivity extends AppCompatActivity implements
                 return true;
             // Respond to a click on the "Delete all entries" menu option
             case R.id.action_delete_all_entries:
-                deleteAllBooks();
+                showDeleteConfirmationDialog();
                 return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Delete All confirmation Dialog
+     */
+    private void showDeleteConfirmationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Delete All Books forever?");
+        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                deleteAllBooks();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (dialogInterface != null) {
+                    dialogInterface.dismiss();
+                }
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
     @NonNull
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
-        // Define a projection that specifies the columns from the table we care about.
+        // Define a projection that specifies the columns from the table but we only care about the first 3.
         String[] projection = {
                 BookEntry._ID,
                 BookEntry.COLUMN_BOOK_TITLE,
                 BookEntry.COLUMN_BOOK_PRICE,
-                BookEntry.COLUMN_BOOK_QUANTITY};
+                BookEntry.COLUMN_BOOK_QUANTITY,
+                BookEntry.COLUMN_BOOK_SUPPLY_NAME,
+                BookEntry.COLUMN_BOOK_SUPPLY_PHONE};
         // This loader will execute the ContentProvider's query method on a background thread
         return new CursorLoader(this,  // Parent activity context
                 BookEntry.CONTENT_URI, // Provider content URI to query
