@@ -37,8 +37,8 @@ public class BookDbHelper extends SQLiteOpenHelper {
                 + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + COLUMN_BOOK_TITLE + " TEXT NOT NULL,"
                 + COLUMN_BOOK_PRICE + " INTEGER NOT NULL,"
-                + COLUMN_BOOK_QUANTITY + " INTEGER NOT NULL DEFAULT 0,"
-                + COLUMN_BOOK_SUPPLY_NAME + " TEXT,"
+                + COLUMN_BOOK_QUANTITY + " INTEGER NOT NULL,"
+                + COLUMN_BOOK_SUPPLY_NAME + " TEXT NOT NULL,"
                 + COLUMN_BOOK_SUPPLY_PHONE + " TEXT NOT NULL);";
         //Execute the SQL statement
         db.execSQL(SQL_CREATE_BOOKS_TABLE);

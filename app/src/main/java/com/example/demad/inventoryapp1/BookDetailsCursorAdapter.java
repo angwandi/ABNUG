@@ -10,7 +10,6 @@ import android.widget.CursorAdapter;
 import android.widget.TextView;
 
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
-
 public class BookDetailsCursorAdapter extends CursorAdapter {
     public BookDetailsCursorAdapter(Context context, Cursor c) {
         super(context, c, 0);
@@ -41,11 +40,6 @@ public class BookDetailsCursorAdapter extends CursorAdapter {
         String quantity = cursor.getString(quantityColumnIndex);
         String name = cursor.getString(supplyNameColumnIndex);
         String phone = cursor.getString(supplyPhoneColumnIndex);
-        // If the the book name is empty string or null, then use some default text
-        // that says "None", so the TextView isn't blank.
-        if (TextUtils.isEmpty(name)) {
-            name = context.getString(R.string.empty_supplyName_details_textUtils);
-        }
         // Update the TextViews with the attributes for the current book
         titleTextView.setText(title);
         priceTextView.setText(String.format("£%s", price));

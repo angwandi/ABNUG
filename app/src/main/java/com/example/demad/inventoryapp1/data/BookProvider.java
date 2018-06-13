@@ -266,7 +266,7 @@ public class BookProvider extends ContentProvider {
         }
         /*
         If the {@link BookEntry#COLUMN_BOOK_PRICE} key is present,
-        check that the title value is not null.
+        check that the price value is not null.
         */
         if (contentValues.containsKey(COLUMN_BOOK_PRICE)) {
             Integer price = contentValues.getAsInteger(COLUMN_BOOK_PRICE);
@@ -276,7 +276,7 @@ public class BookProvider extends ContentProvider {
         }
         /*
         If the {@link BookEntry#COLUMN_BOOK_QUANTITY} key is present,
-        check that the title value is not null and not less than 0.
+        check that the quantity value is not null and not less than 0.
         */
         if (contentValues.containsKey(COLUMN_BOOK_QUANTITY)) {
             Integer quantity = contentValues.getAsInteger(COLUMN_BOOK_QUANTITY);
@@ -285,7 +285,16 @@ public class BookProvider extends ContentProvider {
             }
         }
         /*
-        No need to check supply name, any values is valid(including null)
+        If the {@link BookEntry#COLUMN_BOOK_SUPPLY_NAME} key is present,
+        check that the Supply name value is not null.
+        */
+        if (contentValues.containsKey(COLUMN_BOOK_SUPPLY_NAME)) {
+            String quantity = contentValues.getAsString(COLUMN_BOOK_SUPPLY_PHONE);
+            if (quantity == null) {
+                throw new IllegalArgumentException("Supply name required!");
+            }
+        }
+        /*
         If the {@link BookEntry#COLUMN_BOOK_SUPPLY_PHONE} key is present,
         check that the phone value is not null.
         */
@@ -299,7 +308,7 @@ public class BookProvider extends ContentProvider {
         if (contentValues.size() == 0) {
             return 0;
         }
-        // Otherwise, get writeable database to update the data
+        // Otherwise, get writable database to update the data
         SQLiteDatabase database = mDBHelper.getWritableDatabase();
         // Perform the update on the database and get the number of rows affected
         int rowsUpdated = database.update(TABLE_NAME, contentValues, selection, selectionArgs);

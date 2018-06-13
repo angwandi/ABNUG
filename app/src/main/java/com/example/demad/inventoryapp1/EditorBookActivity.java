@@ -23,7 +23,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.demad.inventoryapp1.data.BookContract;
-
 /**
  * Allows user to create a new book or edit an existing one.
  */
@@ -124,32 +123,40 @@ public class EditorBookActivity extends AppCompatActivity implements
         // Use trim to eliminate leading or trailing white space
         String bookTitleString = bookTitleEditText.getText().toString().trim();
         String bookPriceString = priceEditText.getText().toString().trim();
-        int priceInt = Integer.parseInt(bookPriceString);
         String bookQuantityString = quantityEditText.getText().toString().trim();
-        int quantityInt = Integer.parseInt(bookQuantityString);
         String bookSupplyNameString = supplyNameEditText.getText().toString().trim();
         String bookSupplyPhoneString = supplyPhoneEditText.getText().toString().trim();
         // Check if this is supposed to be a new book
         // and check if all the fields in the editor are blank
-        if (currentEditorBookUri == null && TextUtils.isEmpty(bookTitleString) &&
-                TextUtils.isEmpty(bookPriceString) && TextUtils.isEmpty(bookQuantityString) &&
-                TextUtils.isEmpty(bookSupplyNameString) && TextUtils.isEmpty(bookSupplyPhoneString)) {
-            // Since no fields were modified, we can return early without creating a new book.
-            // No need to create ContentValues and no need to do any ContentProvider operations.
-            return;
-        }
-        // Create a ContentValues object where column names are the keys,
-        // and book attributes from the editor are the values.
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(BookContract.BookEntry.COLUMN_BOOK_TITLE, bookTitleString);
-        contentValues.put(BookContract.BookEntry.COLUMN_BOOK_PRICE, priceInt);
-        contentValues.put(BookContract.BookEntry.COLUMN_BOOK_QUANTITY, quantityInt);
-        contentValues.put(BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME, bookSupplyNameString);
-        contentValues.put(BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE, bookSupplyPhoneString);
-        // Determine if this is a new or existing book by checking if currentEditorBookUri is null or not
         if (currentEditorBookUri == null) {
-            // This is a NEW book, so insert a new book into the provider,
-            // returning the content URI for the new book.
+            if (TextUtils.isEmpty(bookTitleString)) {
+                Toast.makeText(this, "Book title required!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(bookPriceString)) {
+                Toast.makeText(this, "Book price required!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(bookQuantityString)) {
+                Toast.makeText(this, "Book quantity required!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(bookSupplyNameString)) {
+                Toast.makeText(this, "Supply name required!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(bookSupplyPhoneString)) {
+                Toast.makeText(this, "Supply phone required!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            // Create a ContentValues object where column names are the keys,
+            // and book attributes from the editor are the values.
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_TITLE, bookTitleString);
+            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_PRICE, bookPriceString);
+            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_QUANTITY, bookQuantityString);
+            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME, bookSupplyNameString);
+            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE, bookSupplyPhoneString);
             Uri newUri = getContentResolver().insert(BookContract.BookEntry.CONTENT_URI, contentValues);
             // Show a toast message depending on whether or not the insertion was successful.
             if (newUri == null) {
@@ -158,12 +165,37 @@ public class EditorBookActivity extends AppCompatActivity implements
             } else {
                 // Otherwise, the insertion was successful and we can display a toast.
                 Toast.makeText(this, "Book saved", Toast.LENGTH_SHORT).show();
+                finish();
             }
         } else {
-            // Otherwise this is an EXISTING book, so update the book with content URI: currentEditorBookUri
-            // and pass in the new ContentValues. Pass in null for the selection and selection args
-            // because currentEditorBookUri will already identify the correct row in the database that
-            // we want to modify.
+            if (TextUtils.isEmpty(bookTitleString)) {
+                Toast.makeText(this, "Book title required!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(bookPriceString)) {
+                Toast.makeText(this, "Book price required!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(bookQuantityString)) {
+                Toast.makeText(this, "Book quantity required!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(bookSupplyNameString)) {
+                Toast.makeText(this, "Supply name required!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(bookSupplyPhoneString)) {
+                Toast.makeText(this, "Supply phone required!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            // Create a ContentValues object where column names are the keys,
+            // and book attributes from the editor are the values.
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_TITLE, bookTitleString);
+            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_PRICE, bookPriceString);
+            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_QUANTITY, bookQuantityString);
+            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME, bookSupplyNameString);
+            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE, bookSupplyPhoneString);
             int rowsAffected = getContentResolver().update(currentEditorBookUri, contentValues, null, null);
             // Show a toast message depending on whether or not the update was successful.
             if (rowsAffected == 0) {
@@ -172,6 +204,7 @@ public class EditorBookActivity extends AppCompatActivity implements
             } else {
                 // Otherwise, the update was successful and we can display a toast.
                 Toast.makeText(this, "Book updated", Toast.LENGTH_SHORT).show();
+                finish();
             }
         }
     }
@@ -179,22 +212,10 @@ public class EditorBookActivity extends AppCompatActivity implements
     /*
      * This adds menu items to the app bar.
      */
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu options from the res/menu/editor_menu.xml file.
         getMenuInflater().inflate(R.menu.editor_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        // If this is a new book, hide the "Delete" menu item.
-        if (currentEditorBookUri == null) {
-            MenuItem menuItem = menu.findItem(R.id.action_delete);
-            menuItem.setVisible(false);
-            return super.onPrepareOptionsMenu(menu);
-        }
         return true;
     }
 
@@ -208,8 +229,6 @@ public class EditorBookActivity extends AppCompatActivity implements
             case R.id.action_save:
                 //Save Book to the database
                 saveBook();
-                //Exit Activity
-                finish();
                 return true;
             // Respond to a click on the "Up" arrow button in the app bar
             case android.R.id.home:
@@ -281,6 +300,7 @@ public class EditorBookActivity extends AppCompatActivity implements
                 null);                 // Default sort order
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor cursor) {
         // Release early if the cursor is null or there is less than 1 row in the cursor
@@ -304,8 +324,8 @@ public class EditorBookActivity extends AppCompatActivity implements
             String supplyPhone = cursor.getString(supplyPhoneColumnIndex);
             // Update the views on the screen with the values from the database
             bookTitleEditText.setText(bookTitle);
-            priceEditText.setText(String.valueOf(bookPrice));
-            quantityEditText.setText(String.valueOf(bookQuantity));
+            priceEditText.setText(Integer.toString(bookPrice));
+            quantityEditText.setText(Integer.toString(bookQuantity));
             supplyNameEditText.setText(supplyName);
             supplyPhoneEditText.setText(supplyPhone);
         }
