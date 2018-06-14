@@ -45,9 +45,6 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /*Setup BAB */
-        BottomAppBar bottomAppBar = findViewById(R.id.bottomBar);
-        bottomAppBar.replaceMenu(R.menu.main_menu);
         // Setup FAB to open EditorBookActivity
         FloatingActionButton fab = findViewById(R.id.fab_main);
         fab.setOnClickListener(new View.OnClickListener() {
