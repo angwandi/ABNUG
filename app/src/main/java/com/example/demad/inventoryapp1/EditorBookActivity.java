@@ -90,11 +90,8 @@ public class EditorBookActivity extends AppCompatActivity implements
         if (currentEditorBookUri == null) {
             // This is a new book, so change the app bar to say "Add a Book"
             setTitle("Add a Book");
-            // Invalidate the options menu, so the "Delete" menu option can be hidden.
-            invalidateOptionsMenu();
         } else {
             setTitle("Edit Book");
-            invalidateOptionsMenu();
             // Initialize a loader to read the book data from the database
             // and display the current values in the editor
             getSupportLoaderManager().initLoader(EXISTING_BOOK_LOADER, null, this);

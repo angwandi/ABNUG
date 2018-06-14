@@ -1,6 +1,7 @@
 package com.example.demad.inventoryapp1;
 
 import android.content.ContentUris;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -14,6 +15,7 @@ import android.support.v4.content.Loader;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -25,7 +27,6 @@ import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE;
 import static com.example.demad.inventoryapp1.data.BookProvider.BOOK_ID;
-
 public class DetailsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     BookDetailsCursorAdapter bookDetailsCursorAdapter;
     private static final int BOOK_LOADER = 1;
@@ -144,5 +145,33 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
         }
         // Close the activity
         finish();
+    }
+
+    /*Helper method for increase(Add) button*/
+    public void increaseQuantity(int bookID, int bookQuantity) {
+        bookQuantity = bookQuantity + 1;
+        if (bookQuantity >= 0) {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_QUANTITY, bookQuantity);
+            Uri currentUri = ContentUris.withAppendedId(BookContract.BookEntry.CONTENT_URI, bookID);
+            int rowAffected = getContentResolver().update(currentUri, contentValues, null, null);
+            Toast.makeText(this, "Quantity Added", Toast.LENGTH_SHORT).show();
+            Log.e("Log message", "rowsAffected" + rowAffected + bookID + bookQuantity);
+        }
+    }
+
+    /*Helper method for decrease(minus) button*/
+    public void decreaseQuantity(int bookID, int bookQuantity) {
+        bookQuantity = bookQuantity - 1;
+        if (bookQuantity >= 0) {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_QUANTITY, bookQuantity);
+            Uri currentUri = ContentUris.withAppendedId(BookContract.BookEntry.CONTENT_URI, bookID);
+            int rowAffected = getContentResolver().update(currentUri, contentValues, null, null);
+            Toast.makeText(this, "Quantity Reduced", Toast.LENGTH_SHORT).show();
+            Log.e("Log message", "rowsAffected" + rowAffected + bookID + bookQuantity);
+        } else {
+            Toast.makeText(this, "Restricted Action", Toast.LENGTH_SHORT).show();
+        }
     }
 }
