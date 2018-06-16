@@ -190,13 +190,14 @@
 
       <android.support.design.button.MaterialButton
         android:id="@+id/call"
-        android:layout_width="45dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:clickable="true"
         android:focusable="true"
         android:gravity="center"
+        android:text="@string/call_button"
         android:minHeight="48dp"
         android:minWidth="48dp"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"

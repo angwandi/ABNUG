@@ -12,7 +12,7 @@
     <string name="supply_phone_editText">Phone</string>
     <string name="currency">£</string>
     <string name="insert_dummy_data">Insert Dummy Data</string>
-    <string name="inventory_menu_delete">Delete</string>
+    <string name="inventory_menu_delete">Delete all books</string>
     <string name="editor_menu_save">Save</string>
     <string name="editor_menu_delete">Delete</string>
     <string name="shop_button_text">Shop</string>
@@ -32,4 +32,6 @@
     <string name="add_details_button">+</string>
     <string name="minus_details_button">-</string>
     <string name="empty_supplyName_details_textUtils">None</string>
+  <string name="shopping_button">Buy</string>
+  <string name="call_button">Call</string>
 </resources>

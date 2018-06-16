@@ -91,7 +91,7 @@
     android:id="@+id/fab_main"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_gravity="bottom|end"
+    android:layout_gravity="bottom|center"
     android:layout_marginBottom="16dp"
     android:layout_marginEnd="16dp"
     android:layout_marginRight="16dp"
@@ -99,7 +99,8 @@
     android:focusable="true"
     app:backgroundTint="#65ba69"
     app:fabSize="normal"
-    app:srcCompat="@drawable/ic_fab" />
+    app:srcCompat="@drawable/ic_fab"
+    tools:targetApi="lollipop" />
 </android.support.design.widget.CoordinatorLayout>
 
 
