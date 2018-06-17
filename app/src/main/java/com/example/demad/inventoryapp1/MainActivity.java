@@ -9,7 +9,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
-import android.support.design.bottomappbar.BottomAppBar;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
@@ -25,11 +24,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.demad.inventoryapp1.data.BookContract;
-
 import static com.example.demad.inventoryapp1.data.BookContract.*;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE;
+
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
     /**
@@ -62,13 +60,6 @@ public class MainActivity extends AppCompatActivity implements
         // Setup an Adapter to create a list item for each row of book data in the Cursor.
         bookCursorAdapter = new BookCursorAdapter(this, null);
         bookListView.setAdapter(bookCursorAdapter);
-       /* Button shopButton = bookListView.findViewById(R.id.shop_list_item_button);
-        shopButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "minus quantity", Toast.LENGTH_SHORT).show();
-            }
-        });*/
         // Setup the item click listener
         bookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -96,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements
             contentValues.put(BookEntry.COLUMN_BOOK_QUANTITY, bookQuantity);
             Uri currentUri = ContentUris.withAppendedId(BookEntry.CONTENT_URI, bookId);
             int rowsAffected = getContentResolver().update(currentUri, contentValues, null, null);
-            Toast.makeText(this, "Added to bucket", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Added to Shopping list", Toast.LENGTH_SHORT).show();
             Log.e("Log message", "rowsAffected " + rowsAffected + bookId + bookQuantity);
         } else {
             Toast.makeText(this, "Book out of stock!", Toast.LENGTH_SHORT).show();
@@ -116,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements
         contentValues.put(COLUMN_BOOK_SUPPLY_NAME, "Google Books");
         contentValues.put(COLUMN_BOOK_SUPPLY_PHONE, "(+44)7880640470");
         // Receive the new content URI that will allow us to access The book life's data in the future.
-        Uri newUri = getContentResolver().insert(BookEntry.CONTENT_URI, contentValues);
+        getContentResolver().insert(BookEntry.CONTENT_URI, contentValues);
     }
 
     /**
