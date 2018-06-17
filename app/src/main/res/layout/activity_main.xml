@@ -1,106 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  tools:context=".MainActivity">
-
-  <ListView
-    android:id="@+id/list"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clickable="true"
-    android:clipToPadding="false"
-    android:focusable="true"
-    android:scrollbars="none"
-    tools:listitem="@layout/list_item" />
-  <!--Empty view-->
-  <android.support.constraint.ConstraintLayout
-    android:id="@+id/empty_View"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    tools:context=".MainActivity">
 
-    <ImageView
-      android:id="@+id/emptyView_imageView"
-      android:layout_width="48dp"
-      android:layout_height="48dp"
-      android:backgroundTint="@color/colorPrimaryDark"
-      android:contentDescription="@string/book"
-      android:scaleType="center"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintCircleRadius="16dp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.498"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.317"
-      app:srcCompat="@drawable/ic_library_books"
-      tools:targetApi="lollipop" />
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:clipToPadding="false"
+        android:dividerHeight="4dp"
+        android:focusable="true"
+        android:scrollbars="none"
+        tools:listitem="@layout/list_item"
+        tools:targetApi="lollipop" />
+    <!--Empty view-->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/empty_View"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-      android:id="@+id/emptyView_primary_text_textView2"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="8dp"
-      android:layout_marginRight="8dp"
-      android:layout_marginTop="8dp"
-      android:text="@string/emptyView_primary_text"
-      android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-      android:textColor="@android:color/black"
-      android:textStyle="bold"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="@+id/emptyView_imageView"
-      app:layout_constraintStart_toStartOf="@+id/emptyView_imageView"
-      app:layout_constraintTop_toBottomOf="@+id/emptyView_imageView"
-      app:layout_constraintVertical_bias="0.043" />
+        <ImageView
+            android:id="@+id/emptyView_imageView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:contentDescription="@string/book"
+            android:foregroundGravity="center"
+            android:scaleType="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintCircleRadius="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/emptyView_primary_text_textView2"
+            app:layout_constraintStart_toStartOf="@+id/emptyView_primary_text_textView2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.276"
+            app:srcCompat="@drawable/ic_library_books"
+            tools:targetApi="lollipop" />
 
-    <TextView
-      android:id="@+id/emptyView_secondary_text1_textView"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="8dp"
-      android:layout_marginRight="8dp"
-      android:gravity="center"
-      android:lines="2"
-      android:text="@string/emptyView_secondary_text1"
-      android:textColor="#A2AAB0"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="@+id/emptyView_primary_text_textView2"
-      app:layout_constraintStart_toStartOf="@+id/emptyView_primary_text_textView2"
-      app:layout_constraintTop_toBottomOf="@+id/emptyView_primary_text_textView2"
-      app:layout_constraintVertical_bias="0.061" />
+        <TextView
+            android:id="@+id/emptyView_primary_text_textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="@string/emptyView_primary_text"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emptyView_imageView"
+            app:layout_constraintVertical_bias="0.027" />
 
-    <TextView
-      android:id="@+id/emptyView_secondary_text2_textView"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="8dp"
-      android:gravity="start"
-      android:text="@string/emptyView_secondary_text2"
-      android:textColor="#A2AAB0"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="@+id/emptyView_secondary_text1_textView"
-      app:layout_constraintHorizontal_bias="0.58"
-      app:layout_constraintStart_toStartOf="@+id/emptyView_secondary_text1_textView"
-      app:layout_constraintTop_toBottomOf="@+id/emptyView_secondary_text1_textView"
-      app:layout_constraintVertical_bias="0.0" />
-  </android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/emptyView_secondary_text1_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/emptyView_secondary_text1"
+            android:textColor="#A2AAB0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emptyView_primary_text_textView2"
+            app:layout_constraintVertical_bias="0.0" />
 
-  <android.support.design.widget.FloatingActionButton
-    android:id="@+id/fab_main"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="bottom|center"
-    android:layout_marginBottom="16dp"
-    android:layout_marginEnd="16dp"
-    android:layout_marginRight="16dp"
-    android:clickable="true"
-    android:focusable="true"
-    app:backgroundTint="#65ba69"
-    app:fabSize="normal"
-    app:srcCompat="@drawable/ic_fab"
-    tools:targetApi="lollipop" />
+        <TextView
+            android:id="@+id/emptyView_secondary_text2_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center"
+            android:text="@string/emptyView_secondary_text2"
+            android:textColor="#A2AAB0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emptyView_secondary_text1_textView"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/emptyView_secondary_text3_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center"
+            android:text="@string/emptyView_secondary_text3"
+            android:textColor="#A2AAB0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emptyView_secondary_text2_textView"
+            app:layout_constraintVertical_bias="0.0" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="#37464f"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_fab"
+        tools:targetApi="lollipop" />
 </android.support.design.widget.CoordinatorLayout>
 
 

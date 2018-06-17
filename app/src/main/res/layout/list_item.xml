@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/title_list_item_text_view"
@@ -30,7 +30,7 @@
         android:id="@+id/price_list_item_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:textColor="#aeb6db"
         android:textStyle="bold"
@@ -52,16 +52,16 @@
         android:textStyle="bold"
         android:typeface="monospace"
         app:fontFamily="serif-monospace"
+        app:layout_constraintBottom_toBottomOf="@+id/shop_list_item_button"
         app:layout_constraintStart_toStartOf="@+id/price_list_item_text_view"
         app:layout_constraintTop_toBottomOf="@+id/price_list_item_text_view"
         tools:targetApi="o"
-        tools:text="In stock : 23" />
+        tools:text="In stock : 20000" />
 
     <android.support.design.button.MaterialButton
         android:id="@+id/shop_list_item_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:focusable="false"
@@ -74,10 +74,9 @@
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:backgroundTint="@android:color/holo_red_light"
         app:cornerRadius="40dp"
         app:icon="@drawable/ic_shopping_basket"
-        app:layout_constraintBottom_toBottomOf="@+id/quantity_list_item_text_view"
+        app:layout_constraintBaseline_toBaselineOf="@+id/quantity_list_item_text_view"
         app:layout_constraintEnd_toEndOf="parent"
         tools:targetApi="o" />
 </android.support.constraint.ConstraintLayout>

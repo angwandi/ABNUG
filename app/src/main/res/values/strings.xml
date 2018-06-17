@@ -34,4 +34,5 @@
     <string name="empty_supplyName_details_textUtils">None</string>
   <string name="shopping_button">Buy</string>
   <string name="call_button">Call</string>
+    <string name="emptyView_secondary_text3">Click + to add a new book.</string>
 </resources>
