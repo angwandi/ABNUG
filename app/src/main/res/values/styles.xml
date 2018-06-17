@@ -27,7 +27,9 @@
         <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">16dp</item>
         <item name="android:layout_marginLeft">@dimen/title_editText_marginLeft</item>
         <item name="android:layout_marginRight">@dimen/title_editText_marginRight</item>
-        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">8dp</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">
+            @dimen/title_editText_marginStart
+        </item>
         <item name="android:ellipsize">end</item>
         <item name="android:inputType">textCapWords</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Small</item>
@@ -128,110 +130,127 @@
         <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">8dp</item>
         <item name="android:layout_marginTop">@dimen/textView_textView_marginTop</item>
     </style>
-
+    <!--EmptyView imageView-->
     <style name="emptyView_imageView_style">
-        <item name="android:layout_width">48dp</item>
-        <item name="android:layout_height">48dp</item>
-        <item name="android:layout_marginBottom">16dp</item>
-        <item name="android:layout_marginEnd">8dp</item>
-        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_width">@dimen/ev_img_layout_width</item>
+        <item name="android:layout_height">@dimen/ev_img_layout_height</item>
+        <item name="android:layout_marginBottom">@dimen/ev_img_marginBottom</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/ev_img_marginEnd
+        </item>
+        <item name="android:layout_marginLeft">@dimen/ev_img_marginLeft</item>
         <item name="android:layout_marginRight">8dp</item>
-        <item name="android:layout_marginStart">8dp</item>
-        <item name="android:layout_marginTop">16dp</item>
-        <item name="android:backgroundTint">@color/colorPrimaryDark</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">
+            @dimen/ev_img_marginStart
+        </item>
+        <item name="android:layout_marginTop">@dimen/ev_img_marginTop</item>
+        <item name="android:backgroundTint" tools:targetApi="lollipop">@color/colorPrimaryDark
+        </item>
         <item name="android:contentDescription">@string/book</item>
         <item name="android:foregroundGravity">center</item>
         <item name="android:scaleType">center</item>
     </style>
-
+    <!--ListView for main Activity -->
     <style name="listView_activity_main">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:clickable">true</item>
         <item name="android:clipToPadding">false</item>
-        <item name="android:dividerHeight">4dp</item>
+        <item name="android:dividerHeight">@dimen/lv_dividerHeight_activity_main</item>
         <item name="android:focusable">true</item>
         <item name="android:scrollbars">none</item>
     </style>
-
+    <!--EmptyView primary text style-->
     <style name="emptyView_primary_text_textView">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginEnd">8dp</item>
-        <item name="android:layout_marginLeft">8dp</item>
-        <item name="android:layout_marginRight">8dp</item>
-        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/ev_primary_text_marginEnd
+        </item>
+        <item name="android:layout_marginLeft">@dimen/ev_primary_text_marginLeft</item>
+        <item name="android:layout_marginRight">@dimen/ev_primary_text_marginRight</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">
+            @dimen/ev_primary_text_marginStart
+        </item>
         <item name="android:gravity">center</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Medium</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textStyle">bold</item>
     </style>
-
+    <!--EmptyView secondary text1-->
     <style name="emptyView_secondary_text1_textView">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">16dp</item>
-        <item name="android:layout_marginEnd">16dp</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:layout_marginStart">16dp</item>
-        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">@dimen/sec1_mb</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">@dimen/sec1_me</item>
+        <item name="android:layout_marginLeft">@dimen/sec1_ml</item>
+        <item name="android:layout_marginRight">@dimen/sec1_mr</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">16dp</item>
+        <item name="android:layout_marginTop">@dimen/sec1_mt</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">#A2AAB0</item>
     </style>
-
+    <!--EmptyView secondary text-->
     <style name="emptyView_secondary_text2_textView">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">8dp</item>
-        <item name="android:layout_marginEnd">16dp</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginBottom">@dimen/emp_sec_mb</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">@dimen/emp_sec_me
+        </item>
+        <item name="android:layout_marginLeft">@dimen/emp_sec_ml</item>
+        <item name="android:layout_marginRight">@dimen/emp_sec_mr</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">16dp</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">#A2AAB0</item>
     </style>
-
+    <!--EmptyView secondary text3-->
     <style name="emptyView_secondary_text3_textView">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">16dp</item>
-        <item name="android:layout_marginEnd">16dp</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginBottom">@dimen/sec3_mb</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">@dimen/sec3_me</item>
+        <item name="android:layout_marginLeft">@dimen/sec3_ml</item>
+        <item name="android:layout_marginRight">@dimen/sec3_mr</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">@dimen/sec3_ms
+        </item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">#A2AAB0</item>
     </style>
-
+    <!--Floating button to add a new book main activity-->
     <style name="fab_add_book_activity_main">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">bottom|end</item>
-        <item name="android:layout_marginBottom">16dp</item>
-        <item name="android:layout_marginEnd">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginBottom">@dimen/fab_add_book_mb</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/fab_add_book_me
+        </item>
+        <item name="android:layout_marginRight">@dimen/fab_add_book_mr</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
     </style>
-
+    <!--NestedScrollView for details activity-->
     <style name="nestedScrollView_details_activity">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:clipToPadding">false</item>
         <item name="android:fillViewport">true</item>
-        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingBottom">@dimen/nestedScrollView_detailsActivity_pb</item>
     </style>
-
+    <!--Title details activity-->
     <style name="title_details_textView">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginEnd">16dp</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:layout_marginStart">16dp</item>
-        <item name="android:layout_marginTop">16dp</item>
-        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/title_details_txt_me
+        </item>
+        <item name="android:layout_marginLeft">@dimen/title_details_txt_ml</item>
+        <item name="android:layout_marginRight">@dimen/title_details_txt_mr</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">
+            @dimen/title_details_txt_ms
+        </item>
+        <item name="android:layout_marginTop">@dimen/title_details_txt_mt</item>
+        <item name="android:autoSizeTextType" tools:targetApi="o">uniform</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Large</item>
         <item name="android:textColor">@android:color/black</item>
     </style>
@@ -239,48 +258,56 @@
     <style name="title_input_details_textView">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginEnd">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/title_input_dtl_me
+        </item>
+        <item name="android:layout_marginRight">@dimen/title_input_dtl_mr</item>
+        <item name="android:layout_marginTop">@dimen/title_input_dtl_mt</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Medium</item>
         <item name="android:textStyle">bold</item>
         <item name="android:typeface">monospace</item>
     </style>
-
+    <!--Price details activity-->
     <style name="price_details_textView">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginEnd">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:layout_marginTop">16dp</item>
-        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/price_dtl_txt_me
+        </item>
+        <item name="android:layout_marginRight">@dimen/price_dtl_txt_mr</item>
+        <item name="android:layout_marginTop">@dimen/price_dtl_txt_mt</item>
+        <item name="android:autoSizeTextType" tools:targetApi="o">uniform</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Large</item>
         <item name="android:textColor">@android:color/black</item>
     </style>
-
+    <!--Price input details activity-->
     <style name="price_input_details_textView">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">8dp</item>
-        <item name="android:layout_marginEnd">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">@dimen/price_input_dtl_mb</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/price_input_dtl_me
+        </item>
+        <item name="android:layout_marginRight">@dimen/price_input_dtl_mr</item>
+        <item name="android:layout_marginTop">@dimen/price_input_dtl_mt</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Medium</item>
         <item name="android:textStyle">bold</item>
         <item name="android:typeface">monospace</item>
     </style>
-
+    <!--Quantity details activity-->
     <style name="quantity_details_textView">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginEnd">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:layout_marginTop">16dp</item>
-        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/quantity_txt_dtl_me
+        </item>
+        <item name="android:layout_marginRight">@dimen/quantity_txt_dtl_mr</item>
+        <item name="android:layout_marginTop">@dimen/quantity_txt_dtl_mt</item>
+        <item name="android:autoSizeTextType" tools:targetApi="o">uniform</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Large</item>
         <item name="android:textColor">@android:color/black</item>
     </style>
-
+    <!--Quantity input details activity-->
     <style name="quantity_input_details_textView">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -289,170 +316,188 @@
         <item name="android:textStyle">bold</item>
         <item name="android:typeface">monospace</item>
     </style>
-
+    <!--Supply name details activity-->
     <style name="supply_name_details_textView">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">8dp</item>
-        <item name="android:layout_marginEnd">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:layout_marginTop">8dp</item>
-        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:layout_marginBottom">@dimen/sn_txt_dtl_mb</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/sn_txt_dtl_me
+        </item>
+        <item name="android:layout_marginRight">@dimen/sn_txt_dtl_mr</item>
+        <item name="android:layout_marginTop">@dimen/sn_txt_dtl_mt</item>
+        <item name="android:autoSizeTextType" tools:targetApi="o">uniform</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Large</item>
         <item name="android:textColor">@android:color/black</item>
     </style>
-
+    <!--Supply name input details activity-->
     <style name="supply_name_input_details_textView">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginEnd">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/sn_input_dtl_me
+        </item>
+        <item name="android:layout_marginRight">@dimen/sn_txt_dtl_mr</item>
+        <item name="android:layout_marginTop">@dimen/sn_input_dtl_mt</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Medium</item>
         <item name="android:textStyle">bold</item>
         <item name="android:typeface">monospace</item>
     </style>
-
+    <!--Supply phone details activity-->
     <style name="supply_phone_details_textView">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginEnd">8dp</item>
-        <item name="android:layout_marginRight">8dp</item>
-        <item name="android:layout_marginTop">16dp</item>
-        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/sp_txt_dtl_me
+        </item>
+        <item name="android:layout_marginRight">@dimen/sp_txt_dtl_mr</item>
+        <item name="android:layout_marginTop">@dimen/sp_txt_dtl_mt</item>
+        <item name="android:autoSizeTextType" tools:targetApi="o">uniform</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Large</item>
         <item name="android:textColor">@android:color/black</item>
     </style>
-
+    <!--Supply phone input details activity-->
     <style name="supply_phone_input_details_textView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">8dp</item>
-        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:layout_marginTop">@dimen/sp_input_dtl_mt</item>
+        <item name="android:autoSizeTextType" tools:targetApi="o">uniform</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Medium</item>
         <item name="android:textStyle">bold</item>
     </style>
-
+    <!--Add button details activity-->
     <style name="add_details_button">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginLeft">@dimen/add_btn_dtl_ml</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">
+            @dimen/add_btn_dtl_ms
+        </item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
         <item name="android:gravity">center</item>
-        <item name="android:minHeight">48dp</item>
-        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">@dimen/add_btn_dtl_minH</item>
+        <item name="android:minWidth">@dimen/add_btn_dtl_minW</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Large</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textStyle">bold</item>
     </style>
-
+    <!--Minus button details activity-->
     <style name="minus_details_button">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginEnd">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/minus_btn_dtl_me
+        </item>
+        <item name="android:layout_marginRight">@dimen/minus_btn_dtl_mr</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
         <item name="android:gravity">center</item>
-        <item name="android:minHeight">48dp</item>
-        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">@dimen/minus_btn_dtl_minH</item>
+        <item name="android:minWidth">@dimen/minus_btn_dtl_minW</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Large</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textStyle">bold</item>
     </style>
-
+    <!--Call button details activity-->
     <style name="call_details_buttonIcon">
         <item name="android:layout_width">48dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">8dp</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginBottom">@dimen/call_btn_dtl_mb</item>
+        <item name="android:layout_marginLeft">@dimen/call_btn_dtl_ml</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">
+            @dimen/call_btn_dtl_ms
+        </item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
-        <item name="android:minHeight">48dp</item>
-        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">@dimen/call_btn_dtl_minH</item>
+        <item name="android:minWidth">@dimen/call_btn_dtl_minW</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Large</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
-
+    <!--ListView for details activity-->
     <style name="listView_details">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:divider">@android:color/transparent</item>
         <item name="android:scrollbars">none</item>
     </style>
-
+    <!--Delete Floating Button for list details -->
     <style name="fab_delete_list_details">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">bottom|end</item>
-        <item name="android:layout_margin">16dp</item>
+        <item name="android:layout_margin">@dimen/fab_delete_ld_margin</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
     </style>
-
+    <!--Edit Floating Button for list details -->
     <style name="fab_edit_list_details">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">top|end</item>
-        <item name="android:layout_marginBottom">85dp</item>
-        <item name="android:layout_marginEnd">24dp</item>
-        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:layout_marginBottom">@dimen/fab_edit_ld_mb</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/fab_edit_ld_me
+        </item>
+        <item name="android:layout_marginRight">@dimen/fab_edit_ld_mr</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
     </style>
-
+    <!--Title for list item for main activity-->
     <style name="title_list_item_textView">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginEnd">16dp</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:layout_marginStart">16dp</item>
-        <item name="android:layout_marginTop">16dp</item>
-        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">16dp</item>
+        <item name="android:layout_marginLeft">@dimen/title_li_txt_ml</item>
+        <item name="android:layout_marginRight">@dimen/title_li_txt_mr</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">
+            @dimen/title_li_txt_ms
+        </item>
+        <item name="android:layout_marginTop">@dimen/title_li_txt_mt</item>
+        <item name="android:autoSizeTextType" tools:targetApi="o">uniform</item>
         <item name="android:ellipsize">end</item>
         <item name="android:singleLine">true</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Large</item>
         <item name="android:textColor">#2b3d4d</item>
     </style>
-
+    <!--Price list item for main activity-->
     <style name="price_list_item_textView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginTop">@dimen/price_li_txt_mt</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Medium</item>
         <item name="android:textColor">#aeb6db</item>
         <item name="android:textStyle">bold</item>
         <item name="android:typeface">monospace</item>
     </style>
-
+    <!--Quantity list item for main activity-->
     <style name="quantity_list_item_textView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">8dp</item>
-        <item name="android:paddingBottom">16dp</item>
+        <item name="android:layout_marginTop">@dimen/quantity_li_txt_mt</item>
+        <item name="android:paddingBottom">@dimen/quantity_li_txt_mb</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Medium</item>
         <item name="android:textColor">#aeb6db</item>
         <item name="android:textStyle">bold</item>
         <item name="android:typeface">monospace</item>
     </style>
-
+    <!--Buy Button list item for main activity-->
     <style name="shop_list_item_buttonIcon">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginEnd">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/buy_btn_li_me
+        </item>
+        <item name="android:layout_marginRight">@dimen/buy_btn_li_mr</item>
         <item name="android:focusable">false</item>
         <item name="android:focusableInTouchMode">false</item>
         <item name="android:gravity">center</item>
-        <item name="android:minHeight">48dp</item>
-        <item name="android:minWidth">48dp</item>
-        <item name="android:padding">0dp</item>
+        <item name="android:minHeight">@dimen/buy_btn_li_minH</item>
+        <item name="android:minWidth">@dimen/buy_btn_li_minW</item>
+        <item name="android:padding">@dimen/buy_btn_li_padding</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">@dimen/buy_btn_li_text_size</item>
         <item name="android:textStyle">bold</item>
     </style>
 </resources>

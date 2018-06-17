@@ -2,46 +2,166 @@
 <resources>
     <!--Book textView dimensions-->
     <dimen name="book_textView_marginTop">32dp</dimen>
-    <!--Book Title editText dimensions-->
+    <!--Book Title editText -->
     <dimen name="title_editText_marginEnd">16dp</dimen>
     <dimen name="title_editText_marginRight">16dp</dimen>
-    <dimen name="title_editText_marginLeft">8dp</dimen>
-    <!--Book Price editText dimensions-->
+    <dimen name="title_editText_marginLeft">16dp</dimen>
+    <dimen name="title_editText_marginStart">16dp</dimen>
+    <!--Book Price editText -->
     <dimen name="price_editText_marginTop">8dp</dimen>
     <dimen name="price_editText_marginEnd">16dp</dimen>
     <dimen name="price_editText_marginLeft">8dp</dimen>
     <dimen name="price_editText_marginRight">16dp</dimen>
     <dimen name="price_editText_marginStart">8dp</dimen>
-    <!--Book Quantity editText dimensions-->
+    <!--Book Quantity editText -->
     <dimen name="quantity_editText_marginStart">8dp</dimen>
     <dimen name="quantity_editText_marginLeft">8dp</dimen>
     <dimen name="quantity_editText_marginRight">16dp</dimen>
     <dimen name="quantity_editText_marginTop">8dp</dimen>
     <dimen name="quantity_editText_marginEnd">16dp</dimen>
-    <!--Book supply name editText dimensions-->
+    <!--Book supply name editText -->
     <dimen name="supply_name_editText_marginEnd">16dp</dimen>
     <dimen name="supply_name_editText_marginRight">16dp</dimen>
     <dimen name="supply_name_editText_marginLeft">8dp</dimen>
     <dimen name="supply_name_editText_marginTop">8dp</dimen>
     <dimen name="supply_name_editText_marginStart">8dp</dimen>
-    <!--Book supply phone editText dimensions-->
+    <!--Book supply phone editText -->
     <dimen name="supply_phone_editText_marginEnd">16dp</dimen>
     <dimen name="supply_phone_editText_marginRight">16dp</dimen>
     <dimen name="supply_phone_editText_marginTop">8dp</dimen>
-    <!--Book price currency textView dimensions-->
+    <!--Book price currency textView -->
     <dimen name="price_currency_textView_marginBottom">8dp</dimen>
     <dimen name="price_currency_textView_marginEnd">24dp</dimen>
     <dimen name="price_currency_textView_marginRight">24dp</dimen>
     <dimen name="price_currency_textView_marginTop">8dp</dimen>
-    <!--Empty View textView dimensions-->
+    <!--Empty View textView -->
     <dimen name="textView_textView_marginBottom">8dp</dimen>
     <dimen name="textView_textView_marginEnd">8dp</dimen>
     <dimen name="textView_textView_marginLeft">8dp</dimen>
     <dimen name="textView_textView_marginRight">8dp</dimen>
     <dimen name="textView_textView_marginStart">8dp</dimen>
     <dimen name="textView_textView_marginTop">8dp</dimen>
-    <!--FAB dimensions-->
+    <!--Add new book FAB dimensions-->
     <dimen name="fab_marginBottom">16dp</dimen>
     <dimen name="fab_marginEnd">16dp</dimen>
     <dimen name="fab_marginRight">16dp</dimen>
+    <!--EmptyView imageView-->
+    <dimen name="ev_img_layout_width">48dp</dimen>
+    <dimen name="ev_img_layout_height">48dp</dimen>
+    <dimen name="ev_img_marginLeft">8dp</dimen>
+    <dimen name="ev_img_marginRight">8dp</dimen>
+    <dimen name="ev_img_marginEnd">8dp</dimen>
+    <dimen name="ev_img_marginTop">16dp</dimen>
+    <dimen name="ev_img_marginBottom">16dp</dimen>
+    <dimen name="ev_img_marginStart">8dp</dimen>
+    <!--ListView for main Activity -->
+    <dimen name="lv_dividerHeight_activity_main">4dp</dimen>
+    <!--EmptyView primary text style-->
+    <dimen name="ev_primary_text_marginEnd">8dp</dimen>
+    <dimen name="ev_primary_text_marginLeft">8dp</dimen>
+    <dimen name="ev_primary_text_marginRight">8dp</dimen>
+    <dimen name="ev_primary_text_marginStart">8dp</dimen>
+    <!--EmptyView secondary text-->
+    <dimen name="emp_sec_mb">8dp</dimen>
+    <dimen name="emp_sec_me">8dp</dimen>
+    <dimen name="emp_sec_ml">16dp</dimen>
+    <dimen name="emp_sec_mr">16dp</dimen>
+    <dimen name="emp_sec_ms">16dp</dimen>
+    <!--EmptyView secondary text1-->
+    <dimen name="sec1_mb">16dp</dimen>
+    <dimen name="sec1_me">16dp</dimen>
+    <dimen name="sec1_ml">16dp</dimen>
+    <dimen name="sec1_mr">16dp</dimen>
+    <dimen name="sec1_ms">16dp</dimen>
+    <dimen name="sec1_mt">16dp</dimen>
+    <!--EmptyView secondary text3-->
+    <dimen name="sec3_mb">16dp</dimen>
+    <dimen name="sec3_me">16dp</dimen>
+    <dimen name="sec3_ml">16dp</dimen>
+    <dimen name="sec3_mr">16dp</dimen>
+    <dimen name="sec3_ms">16dp</dimen>
+    <!--Floating button to add a new book main activity-->
+    <dimen name="fab_add_book_mb">16dp</dimen>
+    <dimen name="fab_add_book_me">16dp</dimen>
+    <dimen name="fab_add_book_mr">16dp</dimen>
+    <!--NestedScrollView for details activity-->
+    <dimen name="nestedScrollView_detailsActivity_pb">16dp</dimen>
+    <!--Title details activity-->
+    <dimen name="title_details_txt_me">16dp</dimen>
+    <dimen name="title_details_txt_ml">16dp</dimen>
+    <dimen name="title_details_txt_mr">16dp</dimen>
+    <dimen name="title_details_txt_ms">16dp</dimen>
+    <dimen name="title_details_txt_mt">16dp</dimen>
+    <!--Title input details activity-->
+    <dimen name="title_input_dtl_me">16dp</dimen>
+    <dimen name="title_input_dtl_mt">8dp</dimen>
+    <dimen name="title_input_dtl_mr">16dp</dimen>
+    <!--Price details activity-->
+    <dimen name="price_dtl_txt_me">16dp</dimen>
+    <dimen name="price_dtl_txt_mr">16dp</dimen>
+    <dimen name="price_dtl_txt_mt">16dp</dimen>
+    <!--Price input details activity-->
+    <dimen name="price_input_dtl_mb">8dp</dimen>
+    <dimen name="price_input_dtl_me">16dp</dimen>
+    <dimen name="price_input_dtl_mr">16dp</dimen>
+    <dimen name="price_input_dtl_mt">8dp</dimen>
+    <!--Quantity details activity-->
+    <dimen name="quantity_txt_dtl_me">16dp</dimen>
+    <dimen name="quantity_txt_dtl_mr">16dp</dimen>
+    <dimen name="quantity_txt_dtl_mt">16dp</dimen>
+    <!--Supply name details activity-->
+    <dimen name="sn_txt_dtl_mb">8dp</dimen>
+    <dimen name="sn_txt_dtl_me">16dp</dimen>
+    <dimen name="sn_txt_dtl_mr">16dp</dimen>
+    <dimen name="sn_txt_dtl_mt">8dp</dimen>
+    <!--Supply name input details activity-->
+    <dimen name="sn_input_dtl_me">16dp</dimen>
+    <dimen name="sn_input_dtl_mr">16dp</dimen>
+    <dimen name="sn_input_dtl_mt">8dp</dimen>
+    <!--Supply phone details activity-->
+    <dimen name="sp_txt_dtl_me">8dp</dimen>
+    <dimen name="sp_txt_dtl_mr">8dp</dimen>
+    <dimen name="sp_txt_dtl_mt">16dp</dimen>
+    <!--Supply phone input details activity-->
+    <dimen name="sp_input_dtl_mt">8dp</dimen>
+    <!--Add button details activity-->
+    <dimen name="add_btn_dtl_ml">16dp</dimen>
+    <dimen name="add_btn_dtl_ms">16dp</dimen>
+    <dimen name="add_btn_dtl_minH">48dp</dimen>
+    <dimen name="add_btn_dtl_minW">48dp</dimen>
+    <!--Minus button details activity-->
+    <dimen name="minus_btn_dtl_me">16dp</dimen>
+    <dimen name="minus_btn_dtl_mr">16dp</dimen>
+    <dimen name="minus_btn_dtl_minH">48dp</dimen>
+    <dimen name="minus_btn_dtl_minW">48dp</dimen>
+    <!--Call button details activity-->
+    <dimen name="call_btn_dtl_mb">8dp</dimen>
+    <dimen name="call_btn_dtl_ml">16dp</dimen>
+    <dimen name="call_btn_dtl_ms">16dp</dimen>
+    <dimen name="call_btn_dtl_minH">48dp</dimen>
+    <dimen name="call_btn_dtl_minW">48dp</dimen>
+    <!--Delete Floating Button for list details -->
+    <dimen name="fab_delete_ld_margin">16dp</dimen>
+    <!--Edit Floating Button for list details -->
+    <dimen name="fab_edit_ld_mb">85dp</dimen>
+    <dimen name="fab_edit_ld_mr">24dp</dimen>
+    <dimen name="fab_edit_ld_me">24dp</dimen>
+    <!--Title for list item for main activity-->
+    <dimen name="title_li_txt_me">16dp</dimen>
+    <dimen name="title_li_txt_ml">16dp</dimen>
+    <dimen name="title_li_txt_mr">16dp</dimen>
+    <dimen name="title_li_txt_ms">16dp</dimen>
+    <dimen name="title_li_txt_mt">16dp</dimen>
+    <!--Price list item for main activity-->
+    <dimen name="price_li_txt_mt">8dp</dimen>
+    <!--Quantity list item for main activity-->
+    <dimen name="quantity_li_txt_mt">8dp</dimen>
+    <dimen name="quantity_li_txt_mb">16dp</dimen>
+    <!--Buy Button list item for main activity-->
+    <dimen name="buy_btn_li_me">16dp</dimen>
+    <dimen name="buy_btn_li_mr">16dp</dimen>
+    <dimen name="buy_btn_li_minH">48dp</dimen>
+    <dimen name="buy_btn_li_minW">48dp</dimen>
+    <dimen name="buy_btn_li_padding">0dp</dimen>
+    <dimen name="buy_btn_li_text_size">18sp</dimen>
 </resources>
