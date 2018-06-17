@@ -14,7 +14,7 @@
     <!--EmptyView secondary text1-->
     <color name="emptyView_sec_txt1_color">#A2AAB0</color>
     <!--EmptyView secondary text-->
-    <color name="emptyView_sec_txt_color">A2AAB0</color>
+    <color name="emptyView_sec_txt_color">#A2AAB0</color>
     <!--EmptyView secondary text3-->
     <color name="emptyView_sec_txt3_color">#A2AAB0</color>
     <!--Price list item for main activity-->

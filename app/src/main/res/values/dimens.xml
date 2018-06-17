@@ -3,10 +3,10 @@
     <!--Book textView dimensions-->
     <dimen name="book_textView_marginTop">32dp</dimen>
     <!--Book Title editText -->
-    <dimen name="title_editText_marginEnd">16dp</dimen>
+    <dimen name="title_editText_marginEnd">8dp</dimen>
     <dimen name="title_editText_marginRight">16dp</dimen>
-    <dimen name="title_editText_marginLeft">16dp</dimen>
-    <dimen name="title_editText_marginStart">16dp</dimen>
+    <dimen name="title_editText_marginLeft">8dp</dimen>
+    <dimen name="title_editText_marginStart">8dp</dimen>
     <!--Book Price editText -->
     <dimen name="price_editText_marginTop">8dp</dimen>
     <dimen name="price_editText_marginEnd">16dp</dimen>
