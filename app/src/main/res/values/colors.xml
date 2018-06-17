@@ -8,7 +8,17 @@
     <color name="colorSecondaryDark">#c8b7b5</color>
     <color name="colorSecondary">#fbe9e7</color>
     <color name="colorPrimaryText">#000000</color>
-    <!--Editor colors for theme-->
+    <!--Editor colors theme-->
     <color name="editorColorPrimary">#37464f</color>
     <color name="editorColorPrimaryDark">#101f27</color>
+    <!--EmptyView secondary text1-->
+    <color name="emptyView_sec_txt1_color">#A2AAB0</color>
+    <!--EmptyView secondary text-->
+    <color name="emptyView_sec_txt_color">A2AAB0</color>
+    <!--EmptyView secondary text3-->
+    <color name="emptyView_sec_txt3_color">#A2AAB0</color>
+    <!--Price list item for main activity-->
+    <color name="price_li_color">#aeb6db</color>
+    <!--Quantity list item for main activity-->
+    <color name="quantity_li_color">#aeb6db</color>
 </resources>

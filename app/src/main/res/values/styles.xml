@@ -188,7 +188,7 @@
         <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">16dp</item>
         <item name="android:layout_marginTop">@dimen/sec1_mt</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">#A2AAB0</item>
+        <item name="android:textColor">@color/emptyView_sec_txt1_color</item>
     </style>
     <!--EmptyView secondary text-->
     <style name="emptyView_secondary_text2_textView">
@@ -201,7 +201,7 @@
         <item name="android:layout_marginRight">@dimen/emp_sec_mr</item>
         <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">16dp</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">#A2AAB0</item>
+        <item name="android:textColor">@color/emptyView_sec_txt_color</item>
     </style>
     <!--EmptyView secondary text3-->
     <style name="emptyView_secondary_text3_textView">
@@ -467,7 +467,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/price_li_txt_mt</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Medium</item>
-        <item name="android:textColor">#aeb6db</item>
+        <item name="android:textColor">@color/price_li_color</item>
         <item name="android:textStyle">bold</item>
         <item name="android:typeface">monospace</item>
     </style>
@@ -478,7 +478,7 @@
         <item name="android:layout_marginTop">@dimen/quantity_li_txt_mt</item>
         <item name="android:paddingBottom">@dimen/quantity_li_txt_mb</item>
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Medium</item>
-        <item name="android:textColor">#aeb6db</item>
+        <item name="android:textColor">@color/quantity_li_color</item>
         <item name="android:textStyle">bold</item>
         <item name="android:typeface">monospace</item>
     </style>
