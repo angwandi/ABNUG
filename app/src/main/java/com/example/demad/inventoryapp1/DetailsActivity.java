@@ -26,10 +26,11 @@ import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_PRICE;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE;
-import static com.example.demad.inventoryapp1.data.BookProvider.BOOK_ID;
+
 public class DetailsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     BookDetailsCursorAdapter bookDetailsCursorAdapter;
     private static final int BOOK_LOADER = 1;
+    /*Log message*/
     /**
      * Setup a new content URI
      */
@@ -95,7 +96,7 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
     }
 
     /*
-     * Prompt the user to confirm that they want to delete this pet.
+     * Prompt the user to confirm that they want to delete this book.
      */
     private void showDeleteConfirmationDialog() {
         // Create an AlertDialog.Builder and set the message, and click listeners

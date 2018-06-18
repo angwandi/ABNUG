@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     /**
-     * Helper method to insert hardcoded pet data into the database. For debugging purposes only.
+     * Helper method to insert hardcoded book data into the database. For debugging purposes only.
      */
     private void insertBook() {
         // Create a ContentValues object where column names are the keys,
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     /**
-     * Helper method to delete all pets in the database.
+     * Helper method to delete all books in the database.
      */
     private void deleteAllBooks() {
         int rowsDeleted = getContentResolver().delete(BookEntry.CONTENT_URI, null, null);

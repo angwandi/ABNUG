@@ -11,7 +11,6 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
-import android.text.TextUtils;
 import android.util.Log;
 
 import java.util.Objects;
@@ -19,6 +18,7 @@ import java.util.Objects;
 import static com.example.demad.inventoryapp1.data.BookContract.*;
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
 import static java.util.Objects.*;
+
 /**
  * {@link ContentProvider} for Books app.
  */
@@ -38,7 +38,6 @@ public class BookProvider extends ContentProvider {
     /**
      * UriMatcher object to match a content URI to a corresponding code.
      * The input passed into the constructor represents the code to return for the root URI.
-     * It's common to use NO_MATCH for UriMatcher case.
      */
     private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
@@ -94,7 +93,7 @@ public class BookProvider extends ContentProvider {
                         null, null, sortOrder);
                 break;
             case BOOK_ID:
-                // For the PET_ID code, extract out the ID from the URI.
+                // For the BOOK_ID code, extract out the ID from the URI.
                 selection = _ID + "=?";
                 selectionArgs = new String[]{String.valueOf(ContentUris.parseId(uri))};
                 /*

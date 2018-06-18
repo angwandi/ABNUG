@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.demad.inventoryapp1.data.BookContract;
 
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
+
 public class BookDetailsCursorAdapter extends CursorAdapter {
     BookDetailsCursorAdapter(Context context, Cursor c) {
         super(context, c, 0);
@@ -49,7 +50,7 @@ public class BookDetailsCursorAdapter extends CursorAdapter {
         final int quantity = cursor.getInt(quantityColumnIndex);
         String name = cursor.getString(supplyNameColumnIndex);
         final String phone = cursor.getString(supplyPhoneColumnIndex);
-        /*Increase quantity by unit of 5*/
+        /*Increase quantity by unit of 1*/
         increaseQuantityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +58,7 @@ public class BookDetailsCursorAdapter extends CursorAdapter {
                 detailsActivity.increaseQuantity(Integer.valueOf(bookID), quantity);
             }
         });
-        /*Decrease quantity by unit of 5*/
+        /*Decrease quantity by unit of 1*/
         decreaseQuantityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

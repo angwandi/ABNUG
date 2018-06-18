@@ -10,6 +10,7 @@ import android.widget.CursorAdapter;
 import android.widget.TextView;
 
 import com.example.demad.inventoryapp1.data.BookContract;
+
 /**
  * {@link BookCursorAdapter} is an adapter for a list
  * that uses a {@link Cursor} of book data as its data source. This adapter knows

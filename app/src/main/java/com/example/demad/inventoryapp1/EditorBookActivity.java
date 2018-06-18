@@ -14,7 +14,6 @@ import android.support.v4.content.Loader;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.InputFilter;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,7 +29,6 @@ import com.example.demad.inventoryapp1.data.BookContract;
  */
 public class EditorBookActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
-    InputFilter inputFilter;
     /**
      * Identifier for the book data loader
      */

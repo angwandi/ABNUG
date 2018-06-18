@@ -65,6 +65,7 @@
             <TextView
                 android:id="@+id/quantity_input_detail_textView"
                 style="@style/quantity_input_details_textView"
+                android:layout_width="wrap_content"
                 app:fontFamily="serif-monospace"
                 app:layout_constraintBaseline_toBaselineOf="@+id/minus"
                 app:layout_constraintEnd_toStartOf="@+id/add"

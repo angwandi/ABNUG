@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
+
 /**
  * Displays list of books that were entered and stored in the app.
  */
@@ -23,7 +24,7 @@ public class BookDbHelper extends SQLiteOpenHelper {
      *
      * @param context of the app
      */
-    public BookDbHelper(Context context) {
+    BookDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
