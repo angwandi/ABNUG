@@ -24,9 +24,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import static com.example.demad.inventoryapp1.data.BookContract.*;
-import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME;
-import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE;
+import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
 
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
@@ -69,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements
                 // Form the content URI that represents the specific book that was clicked on,
                 // by appending the "id" (passed as input to this method) onto the
                 // {@link BookEntry#CONTENT_URI}.
-                Uri currentBookUri = ContentUris.withAppendedId(BookEntry.CONTENT_URI, id);
+                Uri currentBookUri = ContentUris.withAppendedId(CONTENT_URI, id);
                 // Set the URI on the data field of the intent
                 detailsIntent.setData(currentBookUri);
                 // Launch the {@link DetailsActivity} to display the data for the current book.
@@ -84,8 +82,8 @@ public class MainActivity extends AppCompatActivity implements
         bookQuantity = bookQuantity - 1;
         if (bookQuantity >= 0) {
             ContentValues contentValues = new ContentValues();
-            contentValues.put(BookEntry.COLUMN_BOOK_QUANTITY, bookQuantity);
-            Uri currentUri = ContentUris.withAppendedId(BookEntry.CONTENT_URI, bookId);
+            contentValues.put(COLUMN_BOOK_QUANTITY, bookQuantity);
+            Uri currentUri = ContentUris.withAppendedId(CONTENT_URI, bookId);
             int rowsAffected = getContentResolver().update(currentUri, contentValues, null, null);
             Toast.makeText(this, "Added to Shopping list", Toast.LENGTH_SHORT).show();
             Log.e("Log message", "rowsAffected " + rowsAffected + bookId + bookQuantity);
@@ -101,20 +99,20 @@ public class MainActivity extends AppCompatActivity implements
         // Create a ContentValues object where column names are the keys,
         // and The book of life's book attributes are the values.
         ContentValues contentValues = new ContentValues();
-        contentValues.put(BookEntry.COLUMN_BOOK_TITLE, "The Book life");
-        contentValues.put(BookEntry.COLUMN_BOOK_PRICE, "29");
-        contentValues.put(BookEntry.COLUMN_BOOK_QUANTITY, "5");
+        contentValues.put(COLUMN_BOOK_TITLE, "The Book life");
+        contentValues.put(COLUMN_BOOK_PRICE, "29");
+        contentValues.put(COLUMN_BOOK_QUANTITY, "5");
         contentValues.put(COLUMN_BOOK_SUPPLY_NAME, "Google Books");
         contentValues.put(COLUMN_BOOK_SUPPLY_PHONE, "(+44)7880640470");
         // Receive the new content URI that will allow us to access The book life's data in the future.
-        getContentResolver().insert(BookEntry.CONTENT_URI, contentValues);
+        getContentResolver().insert(CONTENT_URI, contentValues);
     }
 
     /**
      * Helper method to delete all books in the database.
      */
     private void deleteAllBooks() {
-        int rowsDeleted = getContentResolver().delete(BookEntry.CONTENT_URI, null, null);
+        int rowsDeleted = getContentResolver().delete(CONTENT_URI, null, null);
         Log.v("MainActivity", rowsDeleted + "rows deleted from book database");
     }
 
@@ -178,15 +176,15 @@ public class MainActivity extends AppCompatActivity implements
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
         // Define a projection that specifies the columns from the table but we only care about the first 3.
         String[] projection = {
-                BookEntry._ID,
-                BookEntry.COLUMN_BOOK_TITLE,
-                BookEntry.COLUMN_BOOK_PRICE,
-                BookEntry.COLUMN_BOOK_QUANTITY,
-                BookEntry.COLUMN_BOOK_SUPPLY_NAME,
-                BookEntry.COLUMN_BOOK_SUPPLY_PHONE};
+                _ID,
+                COLUMN_BOOK_TITLE,
+                COLUMN_BOOK_PRICE,
+                COLUMN_BOOK_QUANTITY,
+                COLUMN_BOOK_SUPPLY_NAME,
+                COLUMN_BOOK_SUPPLY_PHONE};
         // This loader will execute the ContentProvider's query method on a background thread
         return new CursorLoader(this,  // Parent activity context
-                BookEntry.CONTENT_URI, // Provider content URI to query
+                CONTENT_URI, // Provider content URI to query
                 projection,                        // Columns to include in the resulting Cursor
                 null,                      // No selection clause
                 null,                  // No selection arguments

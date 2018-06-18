@@ -11,8 +11,6 @@ import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
-import com.example.demad.inventoryapp1.data.BookContract;
-
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
 
 public class BookDetailsCursorAdapter extends CursorAdapter {
@@ -37,7 +35,7 @@ public class BookDetailsCursorAdapter extends CursorAdapter {
         Button decreaseQuantityButton = view.findViewById(R.id.minus);
         Button phoneSupplyButton = view.findViewById(R.id.call);
         // Find the columns of books attributes that we're interested in
-        final int idColumnIndex = cursor.getColumnIndex(BookContract.BookEntry._ID);
+        final int idColumnIndex = cursor.getColumnIndex(_ID);
         int titleColumnIndex = cursor.getColumnIndex(COLUMN_BOOK_TITLE);
         int priceColumnIndex = cursor.getColumnIndex(COLUMN_BOOK_PRICE);
         int quantityColumnIndex = cursor.getColumnIndex(COLUMN_BOOK_QUANTITY);

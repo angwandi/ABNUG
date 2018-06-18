@@ -22,7 +22,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.demad.inventoryapp1.data.BookContract;
+
+import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
 
 /**
  * Allows user to create a new book or edit an existing one.
@@ -150,12 +151,12 @@ public class EditorBookActivity extends AppCompatActivity implements
             // Create a ContentValues object where column names are the keys,
             // and book attributes from the editor are the values.
             ContentValues contentValues = new ContentValues();
-            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_TITLE, bookTitleString);
-            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_PRICE, bookPriceString);
-            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_QUANTITY, bookQuantityString);
-            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME, bookSupplyNameString);
-            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE, bookSupplyPhoneString);
-            Uri newUri = getContentResolver().insert(BookContract.BookEntry.CONTENT_URI, contentValues);
+            contentValues.put(COLUMN_BOOK_TITLE, bookTitleString);
+            contentValues.put(COLUMN_BOOK_PRICE, bookPriceString);
+            contentValues.put(COLUMN_BOOK_QUANTITY, bookQuantityString);
+            contentValues.put(COLUMN_BOOK_SUPPLY_NAME, bookSupplyNameString);
+            contentValues.put(COLUMN_BOOK_SUPPLY_PHONE, bookSupplyPhoneString);
+            Uri newUri = getContentResolver().insert(CONTENT_URI, contentValues);
             // Show a toast message depending on whether or not the insertion was successful.
             if (newUri == null) {
                 // If the new content URI is null, then there was an error with insertion.
@@ -189,11 +190,11 @@ public class EditorBookActivity extends AppCompatActivity implements
             // Create a ContentValues object where column names are the keys,
             // and book attributes from the editor are the values.
             ContentValues contentValues = new ContentValues();
-            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_TITLE, bookTitleString);
-            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_PRICE, bookPriceString);
-            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_QUANTITY, bookQuantityString);
-            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME, bookSupplyNameString);
-            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE, bookSupplyPhoneString);
+            contentValues.put(COLUMN_BOOK_TITLE, bookTitleString);
+            contentValues.put(COLUMN_BOOK_PRICE, bookPriceString);
+            contentValues.put(COLUMN_BOOK_QUANTITY, bookQuantityString);
+            contentValues.put(COLUMN_BOOK_SUPPLY_NAME, bookSupplyNameString);
+            contentValues.put(COLUMN_BOOK_SUPPLY_PHONE, bookSupplyPhoneString);
             int rowsAffected = getContentResolver().update(currentEditorBookUri, contentValues, null, null);
             // Show a toast message depending on whether or not the update was successful.
             if (rowsAffected == 0) {
@@ -283,12 +284,12 @@ public class EditorBookActivity extends AppCompatActivity implements
         // Since the editor shows all book attributes, define a projection that contains
         // all columns from the book table
         String[] projection = {
-                BookContract.BookEntry._ID,
-                BookContract.BookEntry.COLUMN_BOOK_TITLE,
-                BookContract.BookEntry.COLUMN_BOOK_PRICE,
-                BookContract.BookEntry.COLUMN_BOOK_QUANTITY,
-                BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME,
-                BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE};
+                _ID,
+                COLUMN_BOOK_TITLE,
+                COLUMN_BOOK_PRICE,
+                COLUMN_BOOK_QUANTITY,
+                COLUMN_BOOK_SUPPLY_NAME,
+                COLUMN_BOOK_SUPPLY_PHONE};
         // This loader will execute the ContentProvider's query method on a background thread
         return new CursorLoader(this,   // Parent activity context
                 currentEditorBookUri,          // Query the content URI for the current book
@@ -309,11 +310,11 @@ public class EditorBookActivity extends AppCompatActivity implements
         // (This should be the only row in the cursor)
         if (cursor.moveToFirst()) {
             // Find the columns of book attributes that we're interested in
-            int titleColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_TITLE);
-            int priceColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_PRICE);
-            int quantityColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_QUANTITY);
-            int supplyNameColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME);
-            int supplyPhoneColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE);
+            int titleColumnIndex = cursor.getColumnIndex(COLUMN_BOOK_TITLE);
+            int priceColumnIndex = cursor.getColumnIndex(COLUMN_BOOK_PRICE);
+            int quantityColumnIndex = cursor.getColumnIndex(COLUMN_BOOK_QUANTITY);
+            int supplyNameColumnIndex = cursor.getColumnIndex(COLUMN_BOOK_SUPPLY_NAME);
+            int supplyPhoneColumnIndex = cursor.getColumnIndex(COLUMN_BOOK_SUPPLY_PHONE);
             // Extract out the value from the Cursor for the given column index
             String bookTitle = cursor.getString(titleColumnIndex);
             int bookPrice = cursor.getInt(priceColumnIndex);

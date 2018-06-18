@@ -20,12 +20,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.demad.inventoryapp1.data.BookContract;
-
 import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
-import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_PRICE;
-import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_NAME;
-import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.COLUMN_BOOK_SUPPLY_PHONE;
 
 public class DetailsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     BookDetailsCursorAdapter bookDetailsCursorAdapter;
@@ -71,7 +66,7 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
         // Define a projection that specifies the columns from the table we care about.
         String[] projection = {
                 _ID,
-                BookContract.BookEntry.COLUMN_BOOK_TITLE,
+                COLUMN_BOOK_TITLE,
                 COLUMN_BOOK_PRICE,
                 COLUMN_BOOK_QUANTITY,
                 COLUMN_BOOK_SUPPLY_NAME,
@@ -153,8 +148,8 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
         bookQuantity = bookQuantity + 1;
         if (bookQuantity >= 0) {
             ContentValues contentValues = new ContentValues();
-            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_QUANTITY, bookQuantity);
-            Uri currentUri = ContentUris.withAppendedId(BookContract.BookEntry.CONTENT_URI, bookID);
+            contentValues.put(COLUMN_BOOK_QUANTITY, bookQuantity);
+            Uri currentUri = ContentUris.withAppendedId(CONTENT_URI, bookID);
             int rowAffected = getContentResolver().update(currentUri, contentValues, null, null);
             Toast.makeText(this, "Quantity Added", Toast.LENGTH_SHORT).show();
             Log.e("Log message", "rowsAffected" + rowAffected + bookID + bookQuantity);
@@ -166,8 +161,8 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
         bookQuantity = bookQuantity - 1;
         if (bookQuantity >= 0) {
             ContentValues contentValues = new ContentValues();
-            contentValues.put(BookContract.BookEntry.COLUMN_BOOK_QUANTITY, bookQuantity);
-            Uri currentUri = ContentUris.withAppendedId(BookContract.BookEntry.CONTENT_URI, bookID);
+            contentValues.put(COLUMN_BOOK_QUANTITY, bookQuantity);
+            Uri currentUri = ContentUris.withAppendedId(CONTENT_URI, bookID);
             int rowAffected = getContentResolver().update(currentUri, contentValues, null, null);
             Toast.makeText(this, "Quantity Reduced", Toast.LENGTH_SHORT).show();
             Log.e("Log message", "rowsAffected" + rowAffected + bookID + bookQuantity);

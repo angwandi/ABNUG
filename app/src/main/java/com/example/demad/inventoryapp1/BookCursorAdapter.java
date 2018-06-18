@@ -9,7 +9,8 @@ import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
-import com.example.demad.inventoryapp1.data.BookContract;
+
+import static com.example.demad.inventoryapp1.data.BookContract.BookEntry.*;
 
 /**
  * {@link BookCursorAdapter} is an adapter for a list
@@ -59,10 +60,10 @@ public class BookCursorAdapter extends CursorAdapter {
         TextView quantityTextView = view.findViewById(R.id.quantity_list_item_text_view);
         Button shoppingButton = view.findViewById(R.id.shop_list_item_button);
         // Find the columns of book attributes that we're interested in
-        final int idColumnIndex = cursor.getColumnIndex(BookContract.BookEntry._ID);
-        int titleColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_TITLE);
-        int priceColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_PRICE);
-        int quantityColumnIndex = cursor.getColumnIndex(BookContract.BookEntry.COLUMN_BOOK_QUANTITY);
+        final int idColumnIndex = cursor.getColumnIndex(_ID);
+        int titleColumnIndex = cursor.getColumnIndex(COLUMN_BOOK_TITLE);
+        int priceColumnIndex = cursor.getColumnIndex(COLUMN_BOOK_PRICE);
+        int quantityColumnIndex = cursor.getColumnIndex(COLUMN_BOOK_QUANTITY);
         final String bookID = cursor.getString(idColumnIndex);
         String bookTitle = cursor.getString(titleColumnIndex);
         String bookPrice = cursor.getString(priceColumnIndex);
