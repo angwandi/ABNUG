@@ -1,46 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.design.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  app:cardBackgroundColor="#eef1ff"
+  app:cardCornerRadius="15dp">
+
+  <android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/title_list_item_text_view"
-        style="@style/title_list_item_textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:targetApi="o"
-        tools:text="Book Title Book Title Book Title Book Title Book Title Book Title" />
+      android:id="@+id/title_list_item_text_view"
+      style="@style/title_list_item_textView"
+      android:layout_marginLeft="8dp"
+      android:layout_marginStart="8dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:targetApi="o"
+      tools:text="Book Title Book Title Book Title Book Title Book Title Book Title" />
 
     <TextView
-        android:id="@+id/price_list_item_text_view"
-        style="@style/price_list_item_textView"
-        app:fontFamily="serif-monospace"
-        app:layout_constraintStart_toStartOf="@+id/title_list_item_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/title_list_item_text_view"
-        tools:targetApi="o"
-        tools:text="£350" />
+      android:id="@+id/price_list_item_text_view"
+      style="@style/price_list_item_textView"
+      app:fontFamily="serif-monospace"
+      app:layout_constraintStart_toStartOf="@+id/title_list_item_text_view"
+      app:layout_constraintTop_toBottomOf="@+id/title_list_item_text_view"
+      tools:targetApi="o"
+      tools:text="£350" />
 
     <TextView
-        android:id="@+id/quantity_list_item_text_view"
-        style="@style/quantity_list_item_textView"
-        app:fontFamily="serif-monospace"
-        app:layout_constraintBottom_toBottomOf="@+id/shop_list_item_button"
-        app:layout_constraintStart_toStartOf="@+id/price_list_item_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/price_list_item_text_view"
-        tools:targetApi="o"
-        tools:text="In stock : 20000" />
+      android:id="@+id/quantity_list_item_text_view"
+      style="@style/quantity_list_item_textView"
+      app:fontFamily="serif-monospace"
+      app:layout_constraintBottom_toBottomOf="@+id/shop_list_item_button"
+      app:layout_constraintStart_toStartOf="@+id/price_list_item_text_view"
+      app:layout_constraintTop_toBottomOf="@+id/price_list_item_text_view"
+      tools:targetApi="o"
+      tools:text="In stock : 20000" />
 
     <android.support.design.button.MaterialButton
-        android:id="@+id/shop_list_item_button"
-        style="@style/shop_list_item_buttonIcon"
-        android:text="@string/shopping_button"
-        app:cornerRadius="40dp"
-        app:icon="@drawable/ic_shopping_basket"
-        app:layout_constraintBaseline_toBaselineOf="@+id/quantity_list_item_text_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:targetApi="o" />
-</android.support.constraint.ConstraintLayout>
+      android:id="@+id/shop_list_item_button"
+      style="@style/shop_list_item_buttonIcon"
+      android:text="@string/shopping_button"
+      app:cornerRadius="40dp"
+      app:icon="@drawable/ic_shopping_basket"
+      app:layout_constraintBaseline_toBaselineOf="@+id/quantity_list_item_text_view"
+      app:layout_constraintEnd_toEndOf="parent"
+      tools:targetApi="o" />
+  </android.support.constraint.ConstraintLayout>
+</android.support.design.card.MaterialCardView>

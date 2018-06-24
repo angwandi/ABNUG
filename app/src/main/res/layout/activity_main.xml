@@ -1,86 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".MainActivity">
+
+  <ListView
+    android:id="@+id/list"
+    style="@style/listView_activity_main"
+    tools:listitem="@layout/list_item"
+    tools:targetApi="lollipop" />
+  <!--Empty view-->
+  <android.support.constraint.ConstraintLayout
+    android:id="@+id/empty_View"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/list"
-        style="@style/listView_activity_main"
-        tools:listitem="@layout/list_item"
-        tools:targetApi="lollipop" />
-    <!--Empty view-->
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/empty_View"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <ImageView
+      android:id="@+id/emptyView_imageView"
+      style="@style/emptyView_imageView_style"
+      android:contentDescription="@string/app_name"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintCircleRadius="16dp"
+      app:layout_constraintEnd_toEndOf="@+id/emptyView_primary_text_textView2"
+      app:layout_constraintStart_toStartOf="@+id/emptyView_primary_text_textView2"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.276"
+      app:srcCompat="@drawable/ic_library_books"
+      tools:targetApi="lollipop" />
 
-        <ImageView
-            android:id="@+id/emptyView_imageView"
-            style="@style/emptyView_imageView_style"
-            android:contentDescription="@string/app_name"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintCircleRadius="16dp"
-            app:layout_constraintEnd_toEndOf="@+id/emptyView_primary_text_textView2"
-            app:layout_constraintStart_toStartOf="@+id/emptyView_primary_text_textView2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.276"
-            app:srcCompat="@drawable/ic_library_books"
-            tools:targetApi="lollipop" />
+    <TextView
+      android:id="@+id/emptyView_primary_text_textView2"
+      style="@style/emptyView_primary_text_textView"
+      android:text="@string/emptyView_primary_text"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/emptyView_imageView"
+      app:layout_constraintVertical_bias="0.027" />
 
-        <TextView
-            android:id="@+id/emptyView_primary_text_textView2"
-            style="@style/emptyView_primary_text_textView"
-            android:text="@string/emptyView_primary_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emptyView_imageView"
-            app:layout_constraintVertical_bias="0.027" />
+    <TextView
+      android:id="@+id/emptyView_secondary_text1_textView"
+      style="@style/emptyView_secondary_text1_textView"
+      android:text="@string/emptyView_secondary_text1"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/emptyView_primary_text_textView2"
+      app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/emptyView_secondary_text1_textView"
-            style="@style/emptyView_secondary_text1_textView"
-            android:text="@string/emptyView_secondary_text1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emptyView_primary_text_textView2"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+      android:id="@+id/emptyView_secondary_text2_textView"
+      style="@style/emptyView_secondary_text2_textView"
+      android:text="@string/emptyView_secondary_text2"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/emptyView_secondary_text1_textView"
+      app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/emptyView_secondary_text2_textView"
-            style="@style/emptyView_secondary_text2_textView"
-            android:text="@string/emptyView_secondary_text2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emptyView_secondary_text1_textView"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+      android:id="@+id/emptyView_secondary_text3_textView"
+      style="@style/emptyView_secondary_text3_textView"
+      android:text="@string/emptyView_secondary_text3"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/emptyView_secondary_text2_textView"
+      app:layout_constraintVertical_bias="0.0" />
+  </android.support.constraint.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/emptyView_secondary_text3_textView"
-            style="@style/emptyView_secondary_text3_textView"
-            android:text="@string/emptyView_secondary_text3"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emptyView_secondary_text2_textView"
-            app:layout_constraintVertical_bias="0.0" />
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_main"
-        style="@style/fab_add_book_activity_main"
-        app:backgroundTint="#37464f"
-        app:fabSize="normal"
-        app:srcCompat="@drawable/ic_fab"
-        tools:targetApi="lollipop" />
+  <android.support.design.widget.FloatingActionButton
+    android:id="@+id/fab_main"
+    style="@style/fab_add_book_activity_main"
+    app:backgroundTint="#37464f"
+    app:fabSize="normal"
+    app:srcCompat="@drawable/ic_fab"
+    tools:targetApi="lollipop" />
 </android.support.design.widget.CoordinatorLayout>
 
 
