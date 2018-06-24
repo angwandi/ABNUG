@@ -101,13 +101,14 @@
                 tools:targetApi="o" />
 
             <TextView
-                android:id="@+id/supply_phone_input_details_textView"
-                style="@style/supply_phone_input_details_textView"
-                app:fontFamily="serif-monospace"
-                app:layout_constraintStart_toStartOf="@+id/supply_phone_details_textView"
-                app:layout_constraintTop_toBottomOf="@+id/supply_phone_details_textView"
-                tools:targetApi="o"
-                tools:text="@string/supply_phone_input_details" />
+              android:id="@+id/supply_phone_input_details_textView"
+              style="@style/supply_phone_input_details_textView"
+              android:layout_marginTop="8dp"
+              app:fontFamily="serif-monospace"
+              app:layout_constraintStart_toStartOf="@+id/supply_phone_details_textView"
+              app:layout_constraintTop_toBottomOf="@+id/supply_phone_details_textView"
+              tools:targetApi="o"
+              tools:text="@string/supply_phone_input_details" />
 
             <android.support.design.button.MaterialButton
                 android:id="@+id/add"
@@ -127,13 +128,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/quantity_detail_textView" />
 
             <android.support.design.button.MaterialButton
-                android:id="@+id/call"
-                style="@style/call_details_buttonIcon"
-                app:cornerRadius="40dp"
-                app:icon="@drawable/ic_call"
-                app:layout_constraintBottom_toBottomOf="@+id/supply_phone_input_details_textView"
-                app:layout_constraintStart_toEndOf="@+id/supply_phone_input_details_textView"
-                app:layout_constraintTop_toTopOf="@+id/supply_phone_input_details_textView" />
+              android:id="@+id/call"
+              style="@style/call_details_buttonIcon"
+              android:layout_marginTop="8dp"
+              app:cornerRadius="40dp"
+              app:icon="@drawable/ic_call"
+              app:layout_constraintBottom_toBottomOf="@+id/supply_phone_input_details_textView"
+              app:layout_constraintStart_toEndOf="@+id/supply_phone_input_details_textView"
+              app:layout_constraintTop_toTopOf="@+id/supply_phone_input_details_textView" />
         </android.support.constraint.ConstraintLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

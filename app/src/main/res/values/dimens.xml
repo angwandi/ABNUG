@@ -55,7 +55,7 @@
     <dimen name="ev_img_marginBottom">16dp</dimen>
     <dimen name="ev_img_marginStart">8dp</dimen>
     <!--ListView for main Activity -->
-    <dimen name="lv_dividerHeight_activity_main">4dp</dimen>
+    <dimen name="lv_dividerHeight_activity_main">8dp</dimen>
     <!--EmptyView primary text style-->
     <dimen name="ev_primary_text_marginEnd">8dp</dimen>
     <dimen name="ev_primary_text_marginLeft">8dp</dimen>
