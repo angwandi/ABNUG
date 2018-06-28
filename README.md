@@ -39,6 +39,10 @@ _Note: As the focus of this program is Java, only projects
 completed with Java as the source code will be accepted. 
 Projects using Kotlin as the source code will not be accepted._
 
+## Demo video:
+
+https://www.youtube.com/watch?v=JlT3Z2kI5RE&t=4s
+
 ## ScreenShots:
 
 ![screener_1530085045582](https://user-images.githubusercontent.com/31923567/41993619-f2f9d770-7a43-11e8-949e-e44022823b82.png)
