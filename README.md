@@ -43,7 +43,7 @@ Projects using Kotlin as the source code will not be accepted._
 
 https://www.youtube.com/watch?v=JlT3Z2kI5RE&t=4s
 
-<img src="images/screener_555.png">
+<img src="images/screener_555.png" width="50">
 
 ![](images/screener_5.png)
 ![](images/screener_555.png)
