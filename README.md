@@ -47,12 +47,10 @@ https://www.youtube.com/watch?v=JlT3Z2kI5RE&t=4s
 
 Screen 1 | Screen 2
 ------------ | -------------
-<img src="images/screener_555.png" width="50"> | ![](images/screener_5.png)
+<img src="images/screener_555.png" width="100"> | ![](images/screener_5.png)
 Screen 3 | Screen 4
 ![](images/screener_555.png) | ![](images/screener_555.png)
 
 
-
-![](images/screener_555.png)
 
 ### Made by 2ms
