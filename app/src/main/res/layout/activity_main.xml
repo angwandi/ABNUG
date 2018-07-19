@@ -80,6 +80,8 @@
     app:backgroundTint="#37464f"
     app:fabSize="normal"
     app:srcCompat="@drawable/ic_fab"
+    android:elevation="6dp"
+    app:pressedTranslationZ="12dp"
     tools:targetApi="lollipop" />
 </android.support.design.widget.CoordinatorLayout>
 

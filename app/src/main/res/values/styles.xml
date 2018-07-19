@@ -221,7 +221,7 @@
     <item name="android:textColor">#A2AAB0</item>
   </style>
   <!--Floating button to add a new book main activity-->
-  <style name="fab_add_book_activity_main">
+  <style name="fab_add_book_activity_main" parent="Theme.AppCompat.Light">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="android:layout_gravity">bottom|end</item>

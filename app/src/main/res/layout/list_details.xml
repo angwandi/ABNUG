@@ -1,33 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/details_list"
-        style="@style/listView_details"
-        tools:listitem="@layout/activity_book_detail"
-        tools:targetApi="lollipop" />
+  <ListView
+    android:id="@+id/details_list"
+    style="@style/listView_details"
+    tools:listitem="@layout/activity_book_detail"
+    tools:targetApi="lollipop" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_delete_forever"
-        style="@style/fab_delete_list_details"
-        app:backgroundTint="@android:color/holo_red_light"
-        app:fabSize="normal"
-        app:layout_anchor="@id/details_list"
-        app:layout_anchorGravity="bottom|right|end"
-        app:rippleColor="@color/colorPrimary"
-        app:srcCompat="@drawable/ic_delete_forever" />
+  <android.support.design.widget.FloatingActionButton
+    android:id="@+id/fab_delete_forever"
+    style="@style/fab_delete_list_details"
+    app:backgroundTint="@android:color/holo_red_light"
+    app:elevation="12dp"
+    app:fabSize="normal"
+    app:layout_anchor="@id/details_list"
+    app:layout_anchorGravity="bottom|right|end"
+    app:pressedTranslationZ="12dp"
+    app:rippleColor="@color/colorPrimary"
+    app:srcCompat="@drawable/ic_delete_forever" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_edit"
-        style="@style/fab_edit_list_details"
-        app:backgroundTint="@color/editorColorPrimary"
-        app:fabSize="mini"
-        app:layout_anchor="@id/fab_delete_forever"
-        app:layout_anchorGravity="top|end"
-        app:rippleColor="@color/colorPrimary"
-        app:srcCompat="@drawable/ic_mode_edit" />
+  <android.support.design.widget.FloatingActionButton
+    android:id="@+id/fab_edit"
+    style="@style/fab_edit_list_details"
+    app:backgroundTint="@color/editorColorPrimary"
+    app:elevation="12dp"
+    app:fabSize="mini"
+    app:layout_anchor="@id/fab_delete_forever"
+    app:layout_anchorGravity="top|end"
+    app:pressedTranslationZ="12dp"
+    app:rippleColor="@color/colorPrimary"
+    app:srcCompat="@drawable/ic_mode_edit" />
 </android.support.design.widget.CoordinatorLayout>
