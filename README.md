@@ -45,11 +45,9 @@ https://www.youtube.com/watch?v=JlT3Z2kI5RE&t=4s
 
 ## Screenshots
 
-Screen 1 | Screen 2
------------- | -------------
-<img src="images/screener_555.png" width="auto"> | ![](images/screener_5.png)
-Screen 3 | Screen 4
-![](images/screener_555.png) | ![](images/screener_555.png)
+Screen 1 | Screen 2 | Screen 3 | Screen 4
+-------- | ---------| ---------| --------
+<img src="images_ia/screener_1530085045582.png" width="100"> | <img src="images_ia/screener_1530085086286.png" width="100"> | <img src="images_ia/screener_1530085118895.png" width="100"> | <img src="images_ia/screener_1530085147843.png" width="100">
 
 
 
