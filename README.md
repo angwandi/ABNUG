@@ -44,7 +44,7 @@ Projects using Kotlin as the source code will not be accepted._
 https://www.youtube.com/watch?v=JlT3Z2kI5RE&t=4s
 
 ## Screenshots
-Main Screen | Settings  | Add an book | Validation | Validation | Book saved |  
+Main Screen | Settings  | Add a book | Validation | Validation | Book saved |  
 :---------: | :-------: | :---------: | :---------:| :---------:| :---------:| 
 <img src="images_ia/screener_1530085045582.png" width="100"> | <img src="images_ia/screener_1530085086286.png" width="100"> | <img src="images_ia/screener_1530085118895.png" width="100"> | <img src="images_ia/screener_1530085147843.png" width="100"> | <img src="images_ia/screener_1530085180407.png" width="100"> | <img src="images_ia/screener_1530085211440.png" width="100"> 
 
