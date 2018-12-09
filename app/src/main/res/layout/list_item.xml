@@ -42,12 +42,11 @@
       tools:targetApi="o"
       tools:text="In stock : 20000" />
 
-    <android.support.design.button.MaterialButton
+    <Button
       android:id="@+id/shop_list_item_button"
       style="@style/shop_list_item_buttonIcon"
       android:text="@string/shopping_button"
-      app:cornerRadius="40dp"
-      app:icon="@drawable/ic_shopping_basket"
+      android:icon="@drawable/ic_shopping_basket"
       app:layout_constraintBaseline_toBaselineOf="@+id/quantity_list_item_text_view"
       app:layout_constraintEnd_toEndOf="parent"
       tools:targetApi="o" />
